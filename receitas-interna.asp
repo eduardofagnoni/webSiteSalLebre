@@ -1,3 +1,4 @@
+<!-- #include file="admin/_classes/__cl__conexao.asp" -->
 <!-- #include file="layout/cod-head.asp" -->
     <meta name="description" content="">
     <meta name="keywords" content="">

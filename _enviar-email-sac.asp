@@ -135,12 +135,12 @@ else
     response.write ("E-mail From: "&oConexaoAdd.EmailFromSistema&"<br>")
     response.write ("E-mail Destinat&aacute;rio: "&varEmail&"<br>")
     response.write ("E-mail C&oacute;pia Oculta: "&oConexaoAdd.EmailCopiaOculta&"<br>")    
-    response.write ("<p style='text-align:center'><a href='contato-sac.asp?msg_sys=40'>Volta para o sistema.</a></p>")	
+    response.write ("<p style='text-align:center'><a href='mensagem-sac-confirmacao.asp'>Volta para o sistema.</a></p>")	
     response.end()
 end if	
 
 set objCDOSYSMail = nothing
 set objCDOSYSCon = nothing
 '***********************************************************     
-response.redirect("contato-sac.asp?msg_sys=40")
+response.redirect("mensagem-sac-confirmacao.asp")
 %>

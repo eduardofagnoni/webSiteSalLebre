@@ -35,12 +35,11 @@ End function
 'função para limpar strings e proteger contra SQLInjection
 '*********************************************************
 
-varAssunto = SafeSQL(request.form("txtAssuntoFC"))
-varNome = SafeSQL(LCase(request.form("txtNomeFC")))
-varEmail = SafeSQL_HTML(LCase(request.form("txtEmailFC")))
-varTelefone = SafeSQL_HTML(request.form("txtTelefoneFC"))
-varMensagem = SafeSQL_HTML(request.form("txtMensagemFC"))
-varFormulario = "Fale Conosco"
+
+varNome = SafeSQL(LCase(request.form("txtNomeNews")))
+varEmail = SafeSQL_HTML(LCase(request.form("txtEmailNews")))
+
+varFormulario = "News Letter"
 
 datasys = now()
 ipCapturado = Request.ServerVariables("remote_addr")
@@ -116,12 +115,12 @@ else
     response.write ("E-mail From: "&oConexaoAdd.EmailFromSistema&"<br>")
     response.write ("E-mail Destinat&aacute;rio: "&varEmail&"<br>")
     response.write ("E-mail C&oacute;pia Oculta: "&oConexaoAdd.EmailCopiaOculta&"<br>")    
-    response.write ("<p style='text-align:center'><a href='mensagem-contato-confirmacao.asp'>Volta para o sistema.</a></p>")	
+    response.write ("<p style='text-align:center'><a href='contato.asp?msg_sys=40'>Volta para o sistema.</a></p>")	
     response.end()
 end if	
 
 set objCDOSYSMail = nothing
 set objCDOSYSCon = nothing
 '***********************************************************     
-response.redirect("mensagem-contato-confirmacao.asp")
+response.redirect("default.asp?msg_sys=46")
 %>

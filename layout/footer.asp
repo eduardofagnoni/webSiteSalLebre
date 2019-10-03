@@ -46,12 +46,12 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
-					<form action="" method="post" id="formulario-newsletter" name="formulario-newsletter">
+					<form action="_enviar-newsletter.asp" method="post" id="formulario-newsletter" name="formulario-newsletter">
 						<label><strong>Cadastre-se</strong> para receber novidades do Sal Lebre.</label>
 						<div class="row">
 							<div class="col-xs-6">
-								<input type="text" id="nome-para-newsletter" name="nome-para-newsletter" placeholder="Nome" >
-								<input type="email" id="e-mail-para-newsletter" name="e-mail-para-newsletter" placeholder="e-mail">							
+								<input type="text" id="txtNomeNews" name="txtNomeNews" placeholder="Nome" >
+								<input type="email" id="txtEmailNews" name="txtEmailNews" placeholder="e-mail">							
 							</div>
 							<div class="col-xs-2">
 								<button type="submit">Cadastrar</button>

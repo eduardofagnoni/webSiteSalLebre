@@ -1,3 +1,4 @@
+<!-- #include file="admin/_classes/__cl__conexao.asp" -->
 <!-- #include file="layout/cod-head.asp" -->
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -224,6 +225,9 @@
 <!-- #include file="layout/footer.asp"-->
 <!-- #include file="layout/cod-footer.asp"-->
 <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- #include file="_mensagens_do_sistema.asp" -->
+
 <script src="plugins/slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 
@@ -327,6 +331,9 @@ $('.receita-right').click(function(){
 
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="assets/animabanner/animateBanner.js"></script>
+
+
+
 
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
