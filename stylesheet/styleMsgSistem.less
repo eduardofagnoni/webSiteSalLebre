@@ -1,0 +1,32 @@
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {font-family: 'Open Sans', sans-serif;}
+
+.tempoDeTransicao (@tempo: 1s) {
+	-webkit-transition: @tempo ease-in-out;
+	-moz-transition: @tempo ease-in-out;
+	-o-transition: @tempo ease-in-out;
+	transition: @tempo ease-in-out;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+
+
+.tempoDeTransicaoDelay (@tempo: 1s) {
+	-webkit-transition-delay: @tempo;
+	-moz-transition-delay: @tempo;
+	-o-transition-delay: @tempo;
+	transition-delay: @tempo;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+
+#modalMsgSistema * {
+    .texto-openSans;
+}
+
+#modalMsgSistema .btAzul {
+    border:none;
+    .texto-openSans;
+    color:#ffffff;
+    background: #0297cc;
+    margin:0;
+    padding: 8px 15px;
+}

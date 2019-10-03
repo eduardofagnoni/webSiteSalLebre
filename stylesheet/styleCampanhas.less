@@ -1,0 +1,425 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/   
+
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {font-family: 'Open Sans', sans-serif;}
+
+.tempoDeTransicao (@tempo: 1s) {
+	-webkit-transition: @tempo ease-in-out;
+	-moz-transition: @tempo ease-in-out;
+	-o-transition: @tempo ease-in-out;
+	transition: @tempo ease-in-out;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+.tempoDeTransicaoDelay (@tempo: 1s) {
+	-webkit-transition-delay: @tempo;
+	-moz-transition-delay: @tempo;
+	-o-transition-delay: @tempo;
+	transition-delay: @tempo;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+
+
+/*-----------------------------------------------------
+Texto em tabelas
+-----------------------------------------------------*/
+@media only screen and (min-width: 320px) {
+    .texto-tabela {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-spacing:0;   
+    }
+    .texto-tabela .coluna {
+        //display: table-cell;
+        text-align: left;
+        margin:inherit;
+        vertical-align: top;
+    }
+    .texto-tabela .coluna h2 {
+        .texto-openSans;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:#16216a;
+        font-size: 28px;
+        text-align: left;
+        padding:0 0 20px 0;
+        margin:0;
+    }
+    .texto-tabela .coluna p {
+        .texto-openSans;
+        color:#00448a;
+        font-size: 15px;
+        padding:0 0 0 0;
+        margin:0;
+    }
+    .texto-tabela .coluna ul {
+        list-style: none;
+        margin:30px 0 0 0;
+        padding:0;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+    .texto-tabela .coluna ul li {
+        margin:0;
+        padding:0;
+        display: table-cell;
+        vertical-align: bottom;
+    }
+    .texto-tabela .coluna ul li span {
+        width: 64px;
+        display: block;
+    }
+    .texto-tabela .coluna ul li p {
+        .texto-openSans;
+        font-size: 13px;
+        text-transform: uppercase;
+        color:#16216a;
+        font-weight: bold;
+        white-space: nowrap;
+        margin:10px 0 0 0;
+    }
+    .texto-tabela .coluna ul li span.seta {
+        width: 34px;
+    }
+    .texto-tabela .coluna ul li.larg {
+        width: 250px;
+    }
+
+}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {
+    .texto-tabela {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-spacing:0;   
+    }
+    .texto-tabela .coluna {
+        display: table-cell;
+        text-align: left;
+        margin:inherit;
+        vertical-align: top;
+    }
+    .texto-tabela .coluna h2 {
+        .texto-openSans;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:#16216a;
+        font-size: 28px;
+        text-align: left;
+        padding:0 15px 0 0;
+        margin:0;
+    }
+    .texto-tabela .coluna p {
+        .texto-openSans;
+        color:#00448a;
+        font-size: 15px;
+        padding:0 60px 0 0;
+        margin:0;
+    }
+} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {
+    .texto-tabela {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-spacing:0;   
+    }
+    .texto-tabela .coluna {
+        display: table-cell;
+        text-align: left;
+        margin:inherit;
+        vertical-align: bottom;
+    }
+    .texto-tabela .coluna h2 {
+        .texto-openSans;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:#16216a;
+        font-size: 35px;
+        text-align: left;
+        padding:0 40px 0 0;
+        margin:0;
+    }
+    .texto-tabela .coluna p {
+        .texto-openSans;
+        color:#00448a;
+        font-size: 15px;
+        padding:0 60px 0 0;
+        margin:0;
+    }
+}
+@media only screen and (min-width: 1382px) {}
+/*-----------------------------------------------------
+Texto em tabelas //
+-----------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------
+Vídeo Camanha
+-----------------------------------------------------*/
+
+.video-campanha {
+    background: url(../images/bg-video-campanha.jpg) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 598px;
+    width: 100%;
+    padding:0;
+    position: relative;
+}
+.video-campanha .pelicula-transparencia {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: block;
+    top:0;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.555);
+    overflow: hidden;
+}
+.video-campanha .pelicula-transparencia .content-texto {
+    background: #0096cc;
+    padding:49px;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    display: block;
+    max-width: 360px;
+}
+.video-campanha .pelicula-transparencia .content-texto p {
+    .texto-openSans;
+    text-transform: uppercase;
+    color:#ffffff;
+    font-size: 23px;
+    font-weight:300; 
+    line-height: 30px;
+}
+.video-campanha .play-video {
+    width:84px;
+    height:84px;
+    background:#00448a;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-42px 0 0 -42px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    .tempoDeTransicao(0.2s);
+    cursor: pointer;
+}
+.video-campanha .play-video span {
+    color:#ffffff;
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    margin:30px 0 0 5px;
+    .tempoDeTransicao(0.2s);
+}
+.video-campanha .play-video:hover {
+    background:#0179a5;    
+    .tempoDeTransicao(0.2s);
+}
+.video-campanha .play-video:hover span {
+    color: #00448a;
+    .tempoDeTransicao(0.2s);
+}
+/*-----------------------------------------------------
+Vídeo Camanha //
+-----------------------------------------------------*/
+
+
+
+
+
+
+
+/*-----------------------------------------------------
+Vídeo Making off 
+-----------------------------------------------------*/
+.video-making-off {
+    width: 100%;
+    height:362px;
+    padding:0;
+    position: relative;
+    margin-bottom: 30px;
+}
+.video-making-off::after {
+    content: "";
+    clear: both;
+}
+.video-making-off .esquerda {
+    width: 50%;
+    height:362px;
+    float: left;
+    background: url(../images/bg-video-making-off.jpg) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.video-making-off .direita {
+    width: 50%;
+    height:362px;
+    float: right;
+    background: #00448a;
+}
+.video-making-off .text-video-making-off {    
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-40px 0 0 -30px;  
+    color:#ffffff;  
+    cursor: pointer;
+    .texto-openSans;
+    font-size: 27px;    
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.video-making-off .text-video-making-off .play-video-making-off {
+    width:57px;
+    height:57px;
+    display:inline-block;
+    background:#ffffff;
+    color:#00448a;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    .tempoDeTransicao(0.2s);
+}
+.video-making-off .text-video-making-off .play-video-making-off .fa {
+    margin: 16px 20px;
+    .tempoDeTransicao(0.2s);
+}
+
+.video-making-off .text-video-making-off:hover .play-video-making-off {
+    background:#0ea3d8;    
+    .tempoDeTransicao(0.2s);
+}
+.video-making-off .text-video-making-off:hover .fa {
+    color: #ffffff;
+    .tempoDeTransicao(0.2s);
+}
+
+.video-making-off .text-video-making-off .play-video-making-off:hover {
+    background:#0ea3d8;    
+    .tempoDeTransicao(0.2s);
+}
+.video-making-off .text-video-making-off .play-video-making-off:hover .fa {
+    color: #ffffff;
+    .tempoDeTransicao(0.2s);
+}
+/*-----------------------------------------------------
+Vídeo Making off //
+-----------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------
+Modal Vídeo Camanha 
+-----------------------------------------------------*/
+.video-campanha .modal-dialog {
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0!important;
+    padding: 0!important;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.video-campanha .modal-content {
+    height: auto;
+    min-height: 100%!important;
+    border-radius: 0!important;
+    margin: 0!important;
+    padding: 0!important;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+.video-campanha .modal-body {
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0!important;
+    padding: 0!important;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.video-campanha .close-video-manifesto {
+    position: absolute;
+    z-index: 100;
+    right: 50px;
+    top: 50px;
+    background-color: transparent;
+    border:none;
+}
+.video-campanha .close-video-manifesto span {
+    color: #ffffff;
+    font-size: 3em;
+    font-weight:300;    
+}
+
+.video-campanha .iframe {
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0!important;
+    padding: 0!important;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+.video-campanha iframe {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;       
+    background-size: cover;
+}
+/*-----------------------------------------------------
+Modal Vídeo Camanha //
+-----------------------------------------------------*/
+
+
+
+
+

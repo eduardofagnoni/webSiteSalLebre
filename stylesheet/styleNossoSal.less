@@ -1,0 +1,462 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/   
+
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {font-family: 'Open Sans', sans-serif;}
+
+.tempoDeTransicao (@tempo: 1s) {
+	-webkit-transition: @tempo ease-in-out;
+	-moz-transition: @tempo ease-in-out;
+	-o-transition: @tempo ease-in-out;
+	transition: @tempo ease-in-out;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+.tempoDeTransicaoDelay (@tempo: 1s) {
+	-webkit-transition-delay: @tempo;
+	-moz-transition-delay: @tempo;
+	-o-transition-delay: @tempo;
+	transition-delay: @tempo;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+.banner-internas .container {
+    position: relative;
+}
+.banner-internas .bg-folha {
+    background-image: url(../images/bg-folha.png);
+    width: 156px;
+    height: 122px;
+    display: block;
+    position: absolute;
+    right: -120px;
+    top: 250px;
+    z-index:1;
+}
+
+
+
+
+
+
+/*-----------------------------------------------------
+section 1 da página
+-----------------------------------------------------*/
+.texto-left {
+    text-align: left!important;    
+}
+.texto-azul {color:#00448a; .texto-openSans; font-size: 15px;}
+.sec-1 {
+    position: relative;
+    overflow: hidden;
+}
+.sec-1 span {
+    width: 62px;
+    height: 80px;
+    display: block;
+}
+.sec-1 .bg-folhas-e-limao {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-image: url(../images/bg-folhas-e-limao.png);
+    width: 721px;
+    height: 774px;
+    display: block;
+}
+.sec-1 .bg-folhas-e-limao .bg-prato {
+    position: absolute;
+    background-image: url(../images/bg-prato.png);
+    width: 463px;
+    height: 607px;
+    display: block;
+    right: 0;
+    bottom: 40px;    
+}
+.sec-1 h3 {
+    .texto-openSans;
+    color:#01a6d0;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.sec-1 p {
+    .texto-openSans;
+    color:#00448a;
+    font-size: 15px;
+    margin:0 0 40px 0;
+}
+@media only screen and (min-width: 320px) {    
+    .banner-internas .bg-folha {
+        background-image: url(../images/bg-folha.png);
+        width: 156px;
+        height: 122px;
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 280px;
+        z-index:1;
+    }
+    .sec-1 .bg-folhas-e-limao {
+        display: none;
+    }
+    .sec-1 .bg-folhas-e-limao .bg-prato {
+        display: none;
+    }
+}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {
+    .banner-internas .bg-folha {
+        background-image: url(../images/bg-folha.png);
+        width: 156px;
+        height: 122px;
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 280px;
+        z-index:1;
+    }
+    .sec-1 .bg-folhas-e-limao {
+        position: absolute;
+        top: 65px;
+        right: -400px;
+        background-image: url(../images/bg-folhas-e-limao.png);
+        width: 721px;
+        height: 774px;
+        display: block;
+    }
+    .sec-1 .bg-folhas-e-limao .bg-prato {
+        position: absolute;
+        background-image: url(../images/bg-prato.png);
+        width: 463px;
+        height: 607px;
+        display: block;
+        right: -120px;
+        bottom: 40px;    
+    }
+} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {
+    .banner-internas .bg-folha {
+        background-image: url(../images/bg-folha.png);
+        width: 156px;
+        height: 122px;
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 280px;
+        z-index:1;
+    }
+    .sec-1 .bg-folhas-e-limao {
+        position: absolute;
+        top: 45px;
+        right: -280px;
+        background-image: url(../images/bg-folhas-e-limao.png);
+        width: 721px;
+        height: 774px;
+        display: block;
+    }
+    .sec-1 .bg-folhas-e-limao .bg-prato {
+        position: absolute;
+        background-image: url(../images/bg-prato.png);
+        width: 463px;
+        height: 607px;
+        display: block;
+        right: -120px;
+        bottom: 40px;    
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .banner-internas .bg-folha {
+        background-image: url(../images/bg-folha.png);
+        width: 156px;
+        height: 122px;
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 280px;
+        z-index:1;
+    }
+    .sec-1 .bg-folhas-e-limao {
+        position: absolute;
+        top: 45px;
+        right: -280px;
+        background-image: url(../images/bg-folhas-e-limao.png);
+        width: 721px;
+        height: 774px;
+        display: block;
+    }
+    .sec-1 .bg-folhas-e-limao .bg-prato {
+        position: absolute;
+        background-image: url(../images/bg-prato.png);
+        width: 463px;
+        height: 607px;
+        display: block;
+        right: -120px;
+        bottom: 40px;    
+    }
+}
+@media only screen and (min-width: 1900px) {
+    .sec-1 {
+        padding-bottom: 140px;
+    }
+    .banner-internas .bg-folha {
+        background-image: url(../images/bg-folha.png);
+        width: 156px;
+        height: 122px;
+        display: block;
+        position: absolute;
+        right: -120px;
+        top: 250px;
+        z-index:1;
+    }
+    .sec-1 .bg-folhas-e-limao {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        background-image: url(../images/bg-folhas-e-limao.png);
+        width: 721px;
+        height: 774px;
+        display: block;
+    }
+    .sec-1 .bg-folhas-e-limao .bg-prato {
+        position: absolute;
+        background-image: url(../images/bg-prato.png);
+        width: 463px;
+        height: 607px;
+        display: block;
+        right: 0;
+        bottom: 40px;    
+    }
+}
+/*-----------------------------------------------------
+section 1 da página //
+-----------------------------------------------------*/
+
+
+
+
+
+
+/*-----------------------------------------------------
+section 2 da página
+-----------------------------------------------------*/
+.sec-2 {
+    background: url(../images/bg-processo.jpg) no-repeat center bottom fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+    background-size: cover;
+    padding-bottom: 530px;
+}
+.sec-2 h2 {
+    .texto-openSans;
+    color:#ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.sec-2 p {
+    .texto-openSans;
+    color:#ffffff;
+    font-size: 15px;
+}
+.sec-2 ul li .cont {
+    position: relative    
+}
+.sec-2 ul li .cont span {
+    width: 50px;
+    display: block;
+    margin:0 0 10px 0;
+}
+.sec-2 ul li .cont h3 {
+    .texto-openSans;
+    color:#00448a;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    clear: both;
+}
+.sec-2 ul li .cont p {
+    .texto-openSans;
+    color:#ffffff;
+    font-size: 15px;
+}
+/**** IMPAR ******/
+.sec-2 ul li:nth-child(odd)::before {
+    content: "";
+    width:24px;
+    height:24px;
+    border:solid 3px #fff;
+    display: block;
+    position: absolute;
+    left:-13px;
+    top:-24px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.sec-2 ul li:nth-child(odd) .cont {
+    top:-80px;
+}
+.sec-2 ul li:nth-child(even) .cont {
+    top:-80px;
+}
+
+
+
+@media only screen and (min-width: 320px) {
+    .sec-2 ul {
+        list-style: none;
+        margin:120px 0 0 0;
+        padding:0;
+        width: 100%;
+    }
+    .sec-2 ul li {
+        margin:0 0 80px 0;
+        padding:0;
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+    /**** IMPAR ******/
+    .sec-2 ul li:nth-child(odd) {
+        border-left:solid 3px #ffffff;    
+        padding:0 20px 0 74px;
+        margin:60px 18px 0 0;
+        text-align: left;        
+        height: 170px;
+    }
+    /**** PAR ******/
+    .sec-2 ul li:nth-child(even) {
+        border-left:solid 3px #ffffff;    
+        padding:0 20px 0 74px;
+        margin:60px 18px 0 0;
+        text-align: left;        
+        height: 170px;
+    }
+    .sec-2 ul li:nth-child(even)::before {
+        content: "";
+        width:24px;
+        height:24px;
+        border:solid 3px #fff;
+        display: block;
+        position: absolute;
+        left:-13px;
+        top:-24px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+    .sec-2 ul li:nth-child(even) span {
+        float: left;
+    }
+}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {
+    .sec-2 ul {
+        list-style: none;
+        margin:80px 0 0 0;
+        padding:0;
+        width: 100%;
+    }
+    .sec-2 ul li {
+        margin:0 0 80px 0;
+        padding:0;
+        width: 49%;
+        display: block;
+        position: relative;
+    }
+    /**** IMPAR ******/
+    .sec-2 ul li:nth-child(odd) {
+        border-left:solid 3px #ffffff;    
+        padding:0 20px 0 74px;
+        margin:60px 18px 0 0;
+        text-align: left;
+        float: right;
+        height: 90px;
+    }
+    /**** PAR ******/
+    .sec-2 ul li:nth-child(even) {
+        border-right:solid 3px #ffffff;
+        border-left:none;    
+        padding:0 74px 0 20px;
+        margin:60px 0 0 0;
+        text-align: right;
+        float: left;
+        height: 90px;
+    }
+    .sec-2 ul li:nth-child(even)::before {
+        content: "";
+        width:24px;
+        height:24px;
+        border:solid 3px #fff;
+        display: block;
+        position: absolute;
+        left: inherit;
+        right:-14px;
+        top:-24px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+    .sec-2 ul li:nth-child(even) span {
+        float: right;
+    }
+} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {
+    /**** IMPAR ******/
+    .sec-2 ul li:nth-child(odd) {
+        border-left:solid 3px #ffffff;    
+        padding:0 20px 0 74px;
+        margin:60px 20px 0 0;
+        text-align: left;
+        float: right;
+        height: 90px;
+    }
+    /**** PAR ******/
+    .sec-2 ul li:nth-child(even) {
+        border-right:solid 3px #ffffff;    
+        padding:0 74px 0 20px;
+        margin:60px 26px 0 0;
+        text-align: right;
+        float: left;
+        height: 90px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    /**** IMPAR ******/
+    .sec-2 ul li:nth-child(odd) {
+        border-left:solid 3px #ffffff;    
+        padding:0 180px 0 74px;
+        margin:60px 26px 0 0;
+        text-align: left;
+        float: right;
+        height: 90px;
+    }
+    /**** PAR ******/
+    .sec-2 ul li:nth-child(even) {
+        border-right:solid 3px #ffffff;    
+        padding:0 74px 0 180px;
+        margin:60px 26px 0 0;
+        text-align: right;
+        float: left;
+        height: 90px;
+    }
+}
+/*-----------------------------------------------------
+section 2 da página //
+-----------------------------------------------------*/
+
+

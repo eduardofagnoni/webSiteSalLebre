@@ -1,0 +1,300 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/   
+
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {font-family: 'Open Sans', sans-serif;}
+
+.tempoDeTransicao (@tempo: 1s) {
+	-webkit-transition: @tempo ease-in-out;
+	-moz-transition: @tempo ease-in-out;
+	-o-transition: @tempo ease-in-out;
+	transition: @tempo ease-in-out;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+
+
+.tempoDeTransicaoDelay (@tempo: 1s) {
+	-webkit-transition-delay: @tempo;
+	-moz-transition-delay: @tempo;
+	-o-transition-delay: @tempo;
+	transition-delay: @tempo;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------
+Section Saudável para você e para o meio ambiente
+-----------------------------------------------------*/
+
+
+
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela * {
+    text-decoration: none;
+}
+
+
+
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont p {
+    .texto-openSans;
+    color:#ffffff;
+    font-size:15px;
+}
+
+
+
+
+
+
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont-1:hover + .bt-1,
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-1:hover {
+    background: #16216a;
+    color:#ffffff;
+    .tempoDeTransicao(0.2s);
+}
+
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont-2:hover + .bt-2,
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-2:hover {
+    background: #0096cc;
+    color:#ffffff;
+    .tempoDeTransicao(0.2s);
+}
+
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont-3:hover + .bt-3,
+.saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-3:hover {
+    background: #64d6ff;
+    color:#ffffff;
+    .tempoDeTransicao(0.2s);
+}
+
+
+
+
+@media only screen and (min-width: 320px) {
+    .saudavel-para-voce-e-para-o-meio-ambiente {
+        padding:50px 0 30px 0;
+        background: url(../images/bg-saudavel-para-voce-e-para-o-meio-ambiente.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        width: 100%;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente h2 {
+        text-align: center;
+        .texto-openSans;
+        text-transform: uppercase;
+        font-weight: bold;
+        color:#16216a;
+        font-size:30px;
+        margin:0 0 30px 0;
+        padding:0;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela {
+        display: block;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .coluna {
+        display: block;
+        text-align: left;
+        cursor: pointer;
+        margin:0 0 15px 0;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-1 {
+        text-align: center;
+        background: #e4e6ea;
+        width: 100%;
+        border:none;
+        color:#16216a;
+        .texto-openSans;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 11px;
+        padding:20px 0;
+        .tempoDeTransicao(0.2s);
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-2 {
+        text-align: center;
+        background: #ffffff;
+        width: 100%;
+        border:none;
+        color:#16216a;
+        .texto-openSans;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 11px;
+        padding:20px 0;
+        .tempoDeTransicao(0.2s);
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-3 {
+        text-align: center;
+        background: #e4e6ea;
+        width: 100%;
+        border:none;
+        color:#16216a;
+        .texto-openSans;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 11px;
+        padding:20px 0;
+        .tempoDeTransicao(0.2s);
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela span {
+        color:#0297cc;
+        font-size: 16px;
+        margin:0 0 0 5px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont {
+        padding:30px 24px;
+        display: block;
+    } 
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont h3 {
+        .texto-openSans;
+        text-transform: uppercase;
+        color:#ffffff;
+        font-size:20px;
+        margin-top:0;
+        padding-top:0;
+    }
+}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {
+    .saudavel-para-voce-e-para-o-meio-ambiente {
+        padding:50px 0 120px 0;
+        background: url(../images/bg-saudavel-para-voce-e-para-o-meio-ambiente.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        width: 100%;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente h2 {
+        text-align: center;
+        .texto-openSans;
+        text-transform: uppercase;
+        font-weight: bold;
+        color:#16216a;
+        font-size:40px;
+        margin:0 0 30px 0;
+        padding:0;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-spacing: 0;
+        margin-top:-15px;    
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .coluna {
+        display: table-cell;
+        text-align: left;
+        cursor: pointer;
+        height: 132px;
+        margin:inherit;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-1 {        
+        font-size: 10px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-2 {        
+        font-size: 10px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-3 {        
+        font-size: 10px;
+    }
+
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont {
+        padding:30px 24px;
+        display: block;
+        min-height: 285px;
+    }    
+} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {
+    .saudavel-para-voce-e-para-o-meio-ambiente {
+        padding:150px 0;
+        background: url(../images/bg-saudavel-para-voce-e-para-o-meio-ambiente.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        width: 100%;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente h2 {
+        text-align: center;
+        .texto-openSans;
+        text-transform: uppercase;
+        font-weight: bold;
+        color:#16216a;
+        font-size:49px;
+        margin:0 0 30px 0;
+        padding:0;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-1 {        
+        font-size: 11px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-2 {        
+        font-size: 11px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .bt-3 {        
+        font-size: 11px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont {
+        padding:50px 30px;
+        display: block;
+        min-height: 285px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont h3 {
+        .texto-openSans;
+        text-transform: uppercase;
+        color:#ffffff;
+        font-size:20px;
+        margin-top:0;
+        padding-top:0;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela span {
+        color:#0297cc;
+        font-size: 16px;
+        margin:0 0 0 20px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont {
+        padding:60px 34px;
+        display: block;
+        min-height: 285px;
+    }
+    .saudavel-para-voce-e-para-o-meio-ambiente .itens-tabela .cont h3 {
+        .texto-openSans;
+        text-transform: uppercase;
+        color:#ffffff;
+        font-size:25px;
+        margin-top:0;
+        padding-top:0;
+    }
+}
+
+/*-----------------------------------------------------
+Section Home Produtos //
+-----------------------------------------------------*/
+
+
+

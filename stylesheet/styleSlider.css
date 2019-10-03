@@ -1,0 +1,548 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*-----------------------------------------------------
+Section Home Produtos
+-----------------------------------------------------*/
+.conteiner-slider {
+  margin: -61px 0 0 0;
+  position: relative;
+  z-index: auto;
+  background: #ffffff;
+  overflow: hidden;
+}
+.conteiner-slider ul li {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border: solid 1px #343434;
+  cursor: pointer;
+  padding: 9px 0 0 0;
+  font-size: 1.3em;
+  color: #343434;
+  text-align: center;
+}
+.conteiner-slider .contenido-slider {
+  position: relative;
+}
+.conteiner-slider .conteudo {
+  width: 200%;
+  position: relative;
+}
+.conteiner-slider .coluna-de-produtos {
+  position: relative;
+}
+.conteiner-slider .contenido-slider .controles .btn-azul:hover {
+  background: #ffffff;
+  color: #16216a;
+}
+.conteiner-slider .contenido-slider .controles .left,
+.conteiner-slider .contenido-slider .controles .right {
+  background: #fff;
+  border: none;
+  width: 59px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.conteiner-slider .contenido-slider .controles .left:hover,
+.conteiner-slider .contenido-slider .controles .right:hover {
+  background: #16216a;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.conteiner-slider .contenido-slider .controles .left:hover span,
+.conteiner-slider .contenido-slider .controles .right:hover span {
+  color: #ffffff;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.conteiner-slider .contenido-slider .controles span {
+  color: #16216a;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+@media only screen and (min-width: 320px) {
+  .conteiner-slider {
+    margin: -61px 0 0 0;
+    position: relative;
+    z-index: auto;
+    background: #ebebed;
+    overflow: hidden;
+  }
+  .conteiner-slider .contenido-slider .controles .btn-azul {
+    background: #16216a;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    border: none;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    margin: 10px 0 0 0;
+    width: 250px;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  .conteiner-slider .contenido-slider .controles {
+    position: relative;
+    margin: -40px 0 0 0;
+    text-align: left;
+  }
+  .conteiner-slider ul {
+    margin: 0 0 0 0;
+    padding: 0px 0 0px 0;
+    list-style: none;
+    text-align: right;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .conteiner-slider .contenido-slider .controles {
+    position: static;
+    margin: 20px 0 0 30px;
+    float: left;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .conteiner-slider {
+    margin: -61px 0 0 0;
+    position: relative;
+    z-index: auto;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .conteiner-slider h2 {
+    text-transform: uppercase;
+    margin: 23% 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+  }
+  .conteiner-slider ul {
+    margin: -61px 0 -61px 0;
+    padding: 70px 0 80px 0;
+    list-style: none;
+    text-align: right;
+  }
+  .conteiner-slider .contenido-slider .controles {
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    margin: inherit;
+    float: none;
+  }
+  .conteiner-slider .coluna-de-produtos::before {
+    content: "";
+    width: 9px;
+    height: 118px;
+    background: #14266c;
+    position: absolute;
+    left: 11px;
+    top: 37%;
+    display: block;
+    z-index: 100;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .conteiner-slider h2 {
+    text-transform: uppercase;
+    margin: 23% 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 46px;
+  }
+  .conteiner-slider ul {
+    margin: -61px 0 -61px 0;
+    padding: 70px 0 140px 0;
+    list-style: none;
+    text-align: right;
+  }
+  .conteiner-slider .contenido-slider .controles {
+    position: absolute;
+    left: 30px;
+    bottom: -60px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .conteiner-slider .contenido-slider .controles .btn-azul {
+    background: #16216a;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    border: none;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    margin: -5px 0 0 10px;
+    width: 346px;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+}
+/*-----------------------------------------------------
+Section Home Produtos //
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+Slider
+-----------------------------------------------------*/
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  list-style: none;
+  background: #ebebed;
+}
+.slider .item {
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+.slider .item {
+  height: 374px;
+  background: #ebebed;
+  position: relative;
+}
+.slick-slide {
+  margin: 0px 3px;
+}
+.slick-slide img {
+  max-width: 100%;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+.slick-slide {
+  transition: all ease-in-out 0.3s;
+  opacity: .2;
+}
+.slick-active {
+  opacity: 1;
+}
+.slick-current {
+  opacity: 1;
+}
+@media only screen and (min-width: 320px) {
+  .slider .item .item-imagem {
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 0px;
+    position: absolute;
+    overflow: hidden;
+  }
+  .slider .item .item-imagem img {
+    max-height: 360px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .slider .item .item-imagem {
+    display: block;
+    width: 90%;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 80px;
+    position: absolute;
+    overflow: hidden;
+  }
+  .slider .item .item-imagem img {
+    max-height: 380px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .slider .item .item-imagem {
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 80px;
+    position: absolute;
+    overflow: hidden;
+  }
+  .slider .item .item-imagem img {
+    max-height: 489px;
+  }
+}
+/*-----------------------------------------------------
+Slider //
+-----------------------------------------------------*/
+/********************************/
+/* Receitas */
+/********************************/
+/*-----------------------------------------------------
+Section Home Receitas
+-----------------------------------------------------*/
+.conteiner-slider-receitas ul li {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border: solid 1px #343434;
+  cursor: pointer;
+  padding: 9px 0 0 0;
+  font-size: 1.3em;
+  color: #343434;
+  text-align: center;
+}
+.conteiner-slider-receitas .contenido-slider {
+  position: relative;
+}
+.conteiner-slider-receitas .conteudo {
+  width: 200%;
+  position: relative;
+}
+.conteiner-slider-receitas .coluna-de-produtos {
+  position: relative;
+}
+.conteiner-slider-receitas .contenido-slider .controles {
+  position: absolute;
+  left: 30px;
+  bottom: 110px;
+}
+.conteiner-slider-receitas .contenido-slider .controles .btn-azul:hover {
+  background: #ffffff;
+  color: #16216a;
+}
+.conteiner-slider-receitas .contenido-slider .controles .receita-left,
+.conteiner-slider-receitas .contenido-slider .controles .receita-right {
+  background: #fff;
+  border: none;
+  width: 59px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.conteiner-slider-receitas .contenido-slider .controles .receita-left:hover,
+.conteiner-slider-receitas .contenido-slider .controles .receita-right:hover {
+  background: #0ea3d8;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.conteiner-slider-receitas .contenido-slider .controles .receita-left:hover span,
+.conteiner-slider-receitas .contenido-slider .controles .receita-right:hover span {
+  color: #ffffff;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.conteiner-slider-receitas .contenido-slider .controles span {
+  color: #16216a;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+@media only screen and (min-width: 320px) {
+  .conteiner-slider-receitas {
+    margin: 0 0 0 0;
+    position: relative;
+    z-index: auto;
+    background: #16216a;
+    overflow: hidden;
+  }
+  .conteiner-slider-receitas p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    color: #ffffff;
+    font-size: 15px;
+  }
+  .conteiner-slider-receitas ul {
+    margin: 20px 0 -64px -15px;
+    padding: 0 0 0 0;
+    /*70px 0 140px 0;*/
+    list-style: none;
+    text-align: right;
+  }
+  .conteiner-slider-receitas h2 {
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+  }
+  .conteiner-slider-receitas .contenido-slider .controles {
+    text-align: left;
+  }
+  .conteiner-slider-receitas .contenido-slider .controles .btn-azul {
+    background: #0ea3d8;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    border: none;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    margin: 10px 0 0 0;
+    width: 250px;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .conteiner-slider-receitas {
+    margin: -61px 0 0 0;
+    position: relative;
+    z-index: auto;
+    background: #16216a;
+    overflow: hidden;
+  }
+  .conteiner-slider-receitas p {
+    text-align: right;
+  }
+  .conteiner-slider-receitas ul {
+    margin: -61px 0 -64px 0;
+    padding: 0 0 0 0;
+    /*70px 0 140px 0;*/
+    list-style: none;
+    text-align: right;
+  }
+  .conteiner-slider-receitas h2 {
+    font-size: 40px;
+  }
+  .conteiner-slider-receitas .coluna-de-produtos::before {
+    content: "";
+    width: 9px;
+    height: 118px;
+    background: #ffffff;
+    position: absolute;
+    left: 11px;
+    top: 37%;
+    display: block;
+    z-index: 100;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .conteiner-slider-receitas h2 {
+    font-size: 46px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .conteiner-slider-receitas .contenido-slider .controles .btn-azul {
+    background: #0ea3d8;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    border: none;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    margin: -5px 0 0 10px;
+    width: 346px;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+}
+/*-----------------------------------------------------
+Section Home Receitas //
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+Slider-receitas
+-----------------------------------------------------*/
+.receita-slider {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  list-style: none;
+  background: #ebebed;
+}
+.receita-slider .item {
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+.receita-slider .item .item-imagem {
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -3px;
+  position: absolute;
+  overflow: hidden;
+}
+.receita-slider .item .item-imagem .caixa-titulo {
+  background: #0ea3d8;
+  position: absolute;
+  max-width: 300px;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #ffffff;
+  top: 30%;
+  left: 0;
+  padding: 70px 10px 70px 30px;
+  text-decoration: none;
+}
+.receita-slider .item {
+  height: 570px;
+  /*374px;*/
+  background: #ebebed;
+  position: relative;
+}
+.slick-slide {
+  margin: 0px 3px;
+}
+.slick-slide img {
+  max-width: 100%;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+.slick-slide {
+  transition: all ease-in-out 0.3s;
+  opacity: .2;
+}
+.slick-active {
+  opacity: 1;
+}
+.slick-current {
+  opacity: 1;
+}
+/*-----------------------------------------------------
+Slider-receitas //
+-----------------------------------------------------*/

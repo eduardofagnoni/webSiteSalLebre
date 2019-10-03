@@ -1,0 +1,134 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*uso ex. - .tempoDeTransicao(0.2s); */
+.banner-internas .container {
+  position: relative;
+}
+.banner-internas .bg-folha {
+  background-image: url(../images/bg-folha.png);
+  width: 156px;
+  height: 122px;
+  display: block;
+  position: absolute;
+  right: -120px;
+  top: 250px;
+  z-index: 1;
+}
+/*-----------------------------------------------------
+Texto em tabelas
+-----------------------------------------------------*/
+@media only screen and (min-width: 320px) {
+  .texto-tabela {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+  }
+  .texto-tabela .coluna {
+    text-align: left;
+    margin: inherit;
+    vertical-align: bottom;
+  }
+  .texto-tabela .coluna h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #16216a;
+    font-size: 28px;
+    text-align: left;
+    padding: 0 0 20px 0;
+    margin: 0;
+  }
+  .texto-tabela .coluna p {
+    font-family: 'Open Sans', sans-serif;
+    color: #00448a;
+    font-size: 15px;
+    padding: 0 0 0 0;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .texto-tabela {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+  }
+  .texto-tabela .coluna {
+    display: table-cell;
+    text-align: left;
+    margin: inherit;
+    vertical-align: bottom;
+  }
+  .texto-tabela .coluna h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #16216a;
+    font-size: 28px;
+    text-align: left;
+    padding: 0 15px 0 0;
+    margin: 0;
+  }
+  .texto-tabela .coluna p {
+    font-family: 'Open Sans', sans-serif;
+    color: #00448a;
+    font-size: 15px;
+    padding: 0 60px 0 0;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .texto-tabela {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+  }
+  .texto-tabela .coluna {
+    display: table-cell;
+    text-align: left;
+    margin: inherit;
+    vertical-align: bottom;
+  }
+  .texto-tabela .coluna h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #16216a;
+    font-size: 40px;
+    text-align: left;
+    padding: 0 40px 0 0;
+    margin: 0;
+  }
+  .texto-tabela .coluna p {
+    font-family: 'Open Sans', sans-serif;
+    color: #00448a;
+    font-size: 15px;
+    padding: 0 60px 0 0;
+    margin: 0;
+  }
+}
+/*-----------------------------------------------------
+Texto em tabelas //
+-----------------------------------------------------*/
+.erro-404 {
+  border-bottom: solid 18px #f3f3f3;
+}

@@ -1,0 +1,143 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*-----------------------------------------------------
+Banner
+-----------------------------------------------------*/
+header .slide {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+header .slide img.banner {
+  width: 100%;
+}
+.img-banner {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 660px;
+  width: 100%;
+  background: red;
+  display: block;
+}
+.carousel-inner .item .carousel-camada-bg {
+  z-index: 1;
+  position: absolute;
+  right: -100%;
+  top: -20px;
+  display: block;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  width: 1400px;
+  height: 661px;
+}
+.carousel-inner .active .carousel-camada-bg {
+  z-index: 1;
+  position: absolute;
+  right: -80px !important;
+  top: -20px;
+  display: block;
+  -webkit-transition: 0.7s ease-in-out;
+  -moz-transition: 0.7s ease-in-out;
+  -o-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  width: 1400px;
+  height: 661px;
+}
+.carousel-inner .item .carousel-captiond {
+  z-index: 2;
+  position: absolute;
+  right: 17%;
+  top: 380px;
+  width: 390px;
+  height: 250px;
+  visibility: hidden;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.carousel-inner .active .carousel-captiond {
+  z-index: 2;
+  position: absolute;
+  right: 17%;
+  top: 250px!important;
+  width: 390px;
+  height: 250px;
+  visibility: visible;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transition-delay: 0.9s;
+  -moz-transition-delay: 0.9s;
+  -o-transition-delay: 0.9s;
+  transition-delay: 0.9s;
+}
+.carousel-inner .carousel-captiond h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 72px;
+  color: #343434;
+  text-align: right;
+  line-height: 72px;
+}
+.carousel-inner .carousel-captiond p {
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #343434;
+}
+.carousel-inner .carousel-captiond a {
+  float: right;
+  display: block;
+  border: solid 1px #343434;
+  padding: 8px 25px;
+  font-family: 'Open Sans', sans-serif;
+  color: #343434;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.carousel-inner .carousel-captiond a:hover {
+  background-color: rgba(20, 20, 20, 0.233);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}

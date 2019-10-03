@@ -1,0 +1,131 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/   
+
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {font-family: 'Open Sans', sans-serif;}
+
+.tempoDeTransicao (@tempo: 1s) {
+	-webkit-transition: @tempo ease-in-out;
+	-moz-transition: @tempo ease-in-out;
+	-o-transition: @tempo ease-in-out;
+	transition: @tempo ease-in-out;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+
+
+.tempoDeTransicaoDelay (@tempo: 1s) {
+	-webkit-transition-delay: @tempo;
+	-moz-transition-delay: @tempo;
+	-o-transition-delay: @tempo;
+	transition-delay: @tempo;
+} /*uso ex. - .tempoDeTransicao(0.2s); */
+
+
+/*-----------------------------------------------------
+Banner
+-----------------------------------------------------*/
+
+header .slide {
+	position: absolute;
+	top:0;
+	z-index: 1;
+	width: 100%;	
+}
+header .slide img.banner {
+	width: 100%;
+}
+
+.img-banner {
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 660px;
+  width: 100%;
+  background: red;
+  display:block;
+}
+
+
+.carousel-inner .item .carousel-camada-bg {
+	z-index: 1;
+	position: absolute;
+	right: -100%;
+	top:-20px;
+	display: block;
+	.tempoDeTransicao(0.3s);
+	.tempoDeTransicaoDelay(0.2s);
+	width: 1400px;
+	height: 661px;
+}
+.carousel-inner .active .carousel-camada-bg {
+	z-index: 1;
+	position: absolute;
+	right: -80px!important;
+	top:-20px;
+	display: block;
+	.tempoDeTransicao(0.7s);
+	.tempoDeTransicaoDelay(0.2s);
+	width: 1400px;
+	height: 661px;	
+}
+.carousel-inner .item .carousel-captiond {
+	z-index: 2;
+	position: absolute;
+	right: 17%;
+	top:380px;
+	width: 390px;
+	height: 250px;
+	visibility: hidden;
+	.tempoDeTransicao(0.3s);
+	.tempoDeTransicaoDelay(0.5s);
+}
+.carousel-inner .active .carousel-captiond {
+	z-index: 2;
+	position: absolute;
+	right: 17%;
+	top:250px!important;
+	width: 390px;
+	height: 250px;
+	visibility: visible;
+	.tempoDeTransicao(0.3s);
+	.tempoDeTransicaoDelay(0.9s);
+}
+.carousel-inner .carousel-captiond h2 {
+	.texto-openSans;
+	font-size: 72px;
+	color:#343434;
+	text-align: right;
+	line-height: 72px;
+}
+.carousel-inner .carousel-captiond p {
+	text-align:right;
+	.texto-openSans;
+	font-size: 18px;
+	color:#343434;
+}
+.carousel-inner .carousel-captiond a {
+	float: right;
+	display: block;
+	border:solid 1px #343434;
+	padding: 8px 25px;
+	.texto-openSans;
+	color:#343434;
+	text-decoration: none;
+	.tempoDeTransicao(0.3s);
+}
+.carousel-inner .carousel-captiond a:hover {
+	background-color: rgba(20, 20, 20, 0.233);
+	.tempoDeTransicao(0.3s);
+}

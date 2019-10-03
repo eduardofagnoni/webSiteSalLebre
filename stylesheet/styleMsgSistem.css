@@ -1,0 +1,19 @@
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*uso ex. - .tempoDeTransicao(0.2s); */
+#modalMsgSistema * {
+  font-family: 'Open Sans', sans-serif;
+}
+#modalMsgSistema .btAzul {
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  background: #0297cc;
+  margin: 0;
+  padding: 8px 15px;
+}

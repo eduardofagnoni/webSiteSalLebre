@@ -1,0 +1,437 @@
+/* -----------------------------------------------------
+Media Query Exemplos
+-----------------------------------------------------
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {} //col-sm
+@media only screen and (min-width: 830px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1382px) {}
+*/
+/*-----------------------------------------------------
+Fontes
+-----------------------------------------------------*/
+.texto-openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*uso ex. - .tempoDeTransicao(0.2s); */
+/*-----------------------------------------------------
+section 1 da página
+-----------------------------------------------------*/
+.texto-left {
+  text-align: left!important;
+}
+.texto-azul {
+  color: #00448a;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+.sec-1 {
+  position: relative;
+  overflow: hidden;
+}
+.sec-1 span {
+  width: 62px;
+  height: 80px;
+  display: block;
+}
+.sec-1 .bg-sal-mais-vendido {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  background-image: url(../images/bg-sal-mais-vendido.png);
+  width: 900px;
+  height: 741px;
+  display: block;
+}
+.sec-1 h3 {
+  font-family: 'Open Sans', sans-serif;
+  color: #01a6d0;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 320px) {
+  .sec-1 .bg-sal-mais-vendido {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sec-1 .bg-sal-mais-vendido {
+    position: absolute;
+    top: -60px;
+    right: -350px;
+    background-image: url(../images/bg-sal-mais-vendido.png);
+    width: 900px;
+    height: 741px;
+    display: block;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .sec-1 .bg-sal-mais-vendido {
+    position: absolute;
+    top: -60px;
+    right: -330px;
+    background-image: url(../images/bg-sal-mais-vendido.png);
+    width: 900px;
+    height: 741px;
+    display: block;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .sec-1 .bg-sal-mais-vendido {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    background-image: url(../images/bg-sal-mais-vendido.png);
+    width: 900px;
+    height: 741px;
+    display: block;
+  }
+}
+/*-----------------------------------------------------
+section 1 da página //
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+section 2 da página
+-----------------------------------------------------*/
+.sec-2 .itens-tabela * {
+  text-decoration: none;
+}
+.sec-2 .itens-tabela .cont p {
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+}
+.sec-2 .itens-tabela .cont-1:hover + .bt-1,
+.sec-2 .itens-tabela .bt-1:hover {
+  background: #16216a;
+  color: #ffffff;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.sec-2 .itens-tabela .cont-2:hover + .bt-2,
+.sec-2 .itens-tabela .bt-2:hover {
+  background: #0096cc;
+  color: #ffffff;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.sec-2 .itens-tabela .cont-3:hover + .bt-3,
+.sec-2 .itens-tabela .bt-3:hover {
+  background: #64d6ff;
+  color: #ffffff;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+@media only screen and (min-width: 320px) {
+  .sec-2 {
+    padding: 50px 0 30px 0;
+    background: url(../images/bg-lebre-e-norsal.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+  }
+  .sec-2 h2 {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color: #16216a;
+    font-size: 30px;
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+  .sec-2 p {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 15px;
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+  .sec-2 .itens-tabela {
+    display: block;
+  }
+  .sec-2 .itens-tabela .coluna {
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    margin: 0 0 15px 0;
+  }
+  .sec-2 .itens-tabela .bt-1 {
+    text-align: center;
+    background: #e4e6ea;
+    width: 100%;
+    border: none;
+    color: #16216a;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 20px 0;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  .sec-2 .itens-tabela .bt-2 {
+    text-align: center;
+    background: #ffffff;
+    width: 100%;
+    border: none;
+    color: #16216a;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 20px 0;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  .sec-2 .itens-tabela .bt-3 {
+    text-align: center;
+    background: #e4e6ea;
+    width: 100%;
+    border: none;
+    color: #16216a;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 20px 0;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  .sec-2 .itens-tabela span {
+    color: #0297cc;
+    font-size: 16px;
+    margin: 0 0 0 5px;
+  }
+  .sec-2 .itens-tabela .cont {
+    padding: 30px 24px;
+    display: block;
+  }
+  .sec-2 .itens-tabela .cont h3 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sec-2 {
+    padding: 50px 0 120px 0;
+  }
+  .sec-2 h2 {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #16216a;
+    font-size: 40px;
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+  .sec-2 .itens-tabela {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+    margin-top: -15px;
+  }
+  .sec-2 .itens-tabela .coluna {
+    display: table-cell;
+    text-align: left;
+    cursor: pointer;
+    height: 132px;
+    margin: inherit;
+  }
+  .sec-2 .itens-tabela .bt-1 {
+    font-size: 10px;
+  }
+  .sec-2 .itens-tabela .bt-2 {
+    font-size: 10px;
+  }
+  .sec-2 .itens-tabela .bt-3 {
+    font-size: 10px;
+  }
+  .sec-2 .itens-tabela .cont {
+    padding: 30px 24px;
+    display: block;
+    min-height: 310px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .sec-2 {
+    padding: 50px 0 120px 0;
+  }
+  .sec-2 h2 {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #16216a;
+    font-size: 49px;
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+  .sec-2 .itens-tabela .bt-1 {
+    font-size: 11px;
+  }
+  .sec-2 .itens-tabela .bt-2 {
+    font-size: 11px;
+  }
+  .sec-2 .itens-tabela .bt-3 {
+    font-size: 11px;
+  }
+  .sec-2 .itens-tabela .cont {
+    padding: 50px 30px;
+    display: block;
+    min-height: 310px;
+  }
+  .sec-2 .itens-tabela .cont h3 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .sec-2 .itens-tabela span {
+    color: #0297cc;
+    font-size: 16px;
+    margin: 0 0 0 20px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .sec-2 .itens-tabela .cont {
+    padding: 60px 34px;
+    display: block;
+    min-height: 330px;
+  }
+  .sec-2 .itens-tabela .cont h3 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+/*-----------------------------------------------------
+section 2 da página //
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+section 3 da página
+-----------------------------------------------------*/
+.sec-3 {
+  background: #16216a;
+}
+.sec-3 p strong {
+  color: #64d6ff;
+  font-weight: normal;
+}
+@media only screen and (min-width: 320px) {
+  .sec-3 h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  .sec-3 .ico-selo {
+    max-width: 64px;
+    display: block;
+    margin: 0 0 10px 0;
+  }
+  .sec-3 p {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    font-size: 15px;
+    margin: -8px 0 0 0;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .sec-3 h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  .sec-3 .ico-selo {
+    max-width: 64px;
+    display: block;
+  }
+  .sec-3 p {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    font-size: 15px;
+    margin: -8px 0 0 0;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .sec-3 h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  .sec-3 .ico-selo {
+    max-width: 64px;
+    display: block;
+  }
+  .sec-3 p {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    font-size: 15px;
+    margin: -8px 0 0 0;
+    padding: 0;
+  }
+}
+/*-----------------------------------------------------
+section 3 da página //
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+section 4 da página
+-----------------------------------------------------*/
+.sec-4 h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: #16216a;
+  text-transform: uppercase;
+  margin: 18px 0 20px 0;
+  padding: 0;
+}
+.sec-4 p {
+  color: #979797;
+  font-size: 15px;
+  margin: 0 0 20px 0;
+}
+/*-----------------------------------------------------
+section 4 da página
+-----------------------------------------------------*/

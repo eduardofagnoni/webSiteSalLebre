@@ -1,0 +1,44 @@
+Descritivos das classes e sintaxe de aplicação:
+
+Conexão com a base de dados:
+- incluir o arquivo "_classes/__cl__conexao.asp"
+- Obs.: O arquivo deve ser editado com as informações da base de dados, local de publicação, prefixo das tabelas e caminhos de pastas.
+
+Para utilizar o Objeto de Conexão:
+
+Dim oConexao
+Set oConexao = New Conexao
+
+--------------------------------------------------
+
+Para abrir uma conexão com a Base:
+
+oConexao.AbreConexao()
+
+--------------------------------------------------
+
+Para faser um SELECT
+
+oConexao.AbreTabela([passar a string do SELECT por parâmetro])
+
+--------------------------------------------------
+
+Incluir um registro:
+
+Conexao.AddItem([passar a string do INSERT por parâmetro])
+
+--------------------------------------------------
+
+Editar um registro:
+
+oConexao.UpdateItem([passar a string do UPDATE por parâmetro])
+
+--------------------------------------------------
+
+Contar Registros
+
+oConexao.ContaItem([passar a string do UPDATE por parâmetro])
+
+
+
+
