@@ -1,2 +1,4 @@
 admin/classes/
 admin/__media/
+admin/classes/*
+admin/__media/*
