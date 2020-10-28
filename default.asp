@@ -1,9 +1,18 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
+<%
+Dim oListaProduto
+Set oListaProduto = New Conexao
+oListaProduto.AbreConexao()
+
+Dim oListaReceitas
+Set oListaReceitas = New Conexao
+oListaReceitas.AbreConexao()
+%>
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Sal Lebre é a linha mais variada e vendido do Brasil. É mais branquinho, soltinho e tem o mais puro cristal de sal marinho.">
+    <meta name="keywords" content="vendas de sal, venda de sal, comprar sal, líder em sal, sal marinho, melhor sal, sal mais vendido, sal bom, sal de qualidade, especialista em sal, especialista em sal, sal no Brasil, marca de sal, marcas de sal, melhor marca de sal, sal número 1, sal número ummm, sal de alto padrão, sal para vender, receitas saudáveis, tipos de sal, sal de cozinha, sal marinho">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
-    <title></title>
+    <title>Sal Lebre – A marca de sal mais vendida do Brasil</title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 <link rel="stylesheet" type="text/css" href="stylesheet/styleSlider.css">
@@ -11,11 +20,12 @@
 <link rel="stylesheet" type="text/css" href="plugins/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css">
 <!-- #include file="layout/menu.asp"-->
+
 <section class="banner-home">
 	<div class="container">
 		<div class="row">			
 			<div class="col-sm-7">
-				<div class="bt-banner">
+				<div class="bt-banner altura-banner" style="margin:40% 0 0 0;">
 
 					<div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:495px; height:149px">
 						<canvas id="canvas" width="495" height="149" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 0.00);"></canvas>
@@ -30,6 +40,26 @@
 		</div>
 	</div>
 </section>
+
+
+<!--
+<section class="banner-home" style="background: url(images/banner-topo.jpg) no-repeat center center fixed; -webkit-background-size: cover;
+  	-moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+	<div class="container">
+		<div class="row">			
+			<div class="col-sm-7">
+				<div class="bt-banner">
+
+					
+
+				</div>
+			</div>						
+		</div>
+	</div>
+</section>
+-->
+
+
 <div id="selo-sal-na-medida" class="wow fadeInUp" data-wow-delay=".06s"><img src="images/sal-na-medida-sabor-com-saude.png" alt="Sal na medida sabor com saúde"></div>
 <main>
 	
@@ -43,75 +73,37 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 coluna-de-produtos">
                         <div class="contenido-slider">
                             <ul class="conteudo regular slider">
+
+								<%
+								oListaProduto.AbreTabela("select id,nome,foto from "&oListaProduto.prefixoTabela&"produto where ativo='s' AND regTerminado='s' order by id asc")
+
+								while not oListaProduto.rs.eof  
+								%>
+
                                 <li class="item">
-									<a href="">
+									<a href="javascript:void(0)">
 										<span class="item-imagem">
-											<img src="images/produtos/1.png" alt="">
+											<img src="administrador/__media/produto/<%=oListaProduto.rs("foto")%>" alt="<%=oListaProduto.rs("nome")%>">
 										</span> 
 								    </a>                                               
                                 </li>
-                                <li class="item">
-									<a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/2.png" alt="">
-										</span>
-									</a>
-                                </li>
-                                <li class="item">
-                                    <a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/3.png" alt="">
-										</span> 
-								    </a>  
-                                </li>
-                                <li class="item">
-									<a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/1.png" alt="">
-										</span> 
-								    </a>                                               
-                                </li>
-                                <li class="item">
-									<a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/2.png" alt="">
-										</span>
-									</a>
-                                </li>
-                                <li class="item">
-                                    <a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/3.png" alt="">
-										</span> 
-								    </a>  
-                                </li>
-                                <li class="item">
-									<a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/1.png" alt="">
-										</span> 
-								    </a>                                               
-                                </li>
-                                <li class="item">
-									<a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/2.png" alt="">
-										</span>
-									</a>
-                                </li>
-                                <li class="item">
-                                    <a href="">
-										<span class="item-imagem">
-											<img src="images/produtos/3.png" alt="">
-										</span> 
-								    </a>  
-                                </li>
+
+								<%
+                                oListaProduto.rs.MoveNext()
+                                wend
+                                oListaProduto.rs.Close()
+                                set oListaProduto.rs = nothing
+                                %>  
+
+
                             </ul>
+
+							
 
 							<ul class="controles">
 								<li class="left"><span class="fa fa-angle-left"></span></li>
 								<li class="right"><span class="fa fa-angle-right"></span></li>
-								<li class="btn btn-azul">Conheça a linha completa</li>
+								<li class="btn btn-azul" onclick="location.href='produtos.asp'">Conheça a linha completa</li>
 							</ul>
                         </div>
                     </div>
@@ -169,33 +161,35 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 coluna-de-produtos">
                         <div class="contenido-slider">
                             <ul class="conteudo receitas receita-slider">
-                                <li class="item">
-									<a href="">
-										<span class="item-imagem" style="background:url(images/receitas/foto.jpg) no-repeat center center;background-size: cover;">
-											<div class="caixa-titulo wow fadeInLeft animate">espinafre com quinoa e sementes de romã.</div>
+
+								<%
+								oListaReceitas.AbreTabela("select id,nome,foto from "&oListaReceitas.prefixoTabela&"receitas where ativo='s' AND regTerminado='s' order by id asc")
+
+								while not oListaReceitas.rs.eof  
+								%>
+								
+								<li class="item">
+									<a href="receitas-interna.asp?id=<%=oListaReceitas.rs("id")%>">
+										<span class="item-imagem" style="background:url(administrador/__media/receita/<%=oListaReceitas.rs("foto")%>) no-repeat center center;background-size: cover;">
+											<div class="caixa-titulo wow fadeInLeft animate"><%=oListaReceitas.rs("nome")%></div>
 										</span>    
 									</a>                                                   
-                                </li>
-                                <li class="item">
-                                    <a href="">
-										<span class="item-imagem" style="background:url(images/receitas/foto.jpg) no-repeat center center;background-size: cover;">
-											<div class="caixa-titulo">espinafre com quinoa e sementes de romã.</div>
-										</span>    
-									</a>
-                                </li>
-                                <li class="item">
-                                    <a href="">
-										<span class="item-imagem" style="background:url(images/receitas/foto.jpg) no-repeat center center;background-size: cover;">
-											<div class="caixa-titulo">espinafre com quinoa e sementes de romã.</div>
-										</span>    
-									</a> 
-                                </li>
+                                </li>                               
+
+								<%
+                                oListaReceitas.rs.MoveNext()
+                                wend
+                                oListaReceitas.rs.Close()
+                                set oListaReceitas.rs = nothing
+                                %> 
+
+                               
                             </ul>
 
 							<ul class="controles">
 								<li class="receita-left"><span class="fa fa-angle-left"></span></li>
 								<li class="receita-right"><span class="fa fa-angle-right"></span></li>
-								<li class="btn btn-azul">Veja todas as receitas</li>
+								<li class="btn btn-azul" onclick="location.href='receitas.asp'">Veja todas as receitas</li>
 							</ul>
                         </div>
                     </div>

@@ -1,20 +1,30 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
+<%
+Dim oListaArquivos
+Set oListaArquivos = New Conexao
+oListaArquivos.AbreConexao()
+
+id = request.querystring("id")
+
+oListaArquivos.AbreTabela("select id,nome,texto,foto,seo_title,seo_description,seo_keyword from "&oListaArquivos.prefixoTabela&"projeto where ativo='s' AND regTerminado='s' AND id="&id)      
+%>
+
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="<%=oListaArquivos.rs("seo_description")%>">
+    <meta name="keywords" content="<%=oListaArquivos.rs("seo_keyword")%>">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
 
     <!-- Meta Facebook Markup -->
-    <meta property="og:url" content="" >
+    <meta property="og:url" content="<%=oListaArquivos.caminhoInicial%>/sustentabilidade-interna.asp.asp?id=<%=id%>" >
     <meta property="og:type" content="" >
-    <meta property="og:title" content="" >
-    <meta property="og:description" content="" >
-    <meta property="og:image" content="" >
+    <meta property="og:title" content="<%=oListaArquivos.rs("seo_title")%>" >
+    <meta property="og:description" content="<%=oListaArquivos.rs("seo_description")%>" >
+    <meta property="og:image" content="<%=oListaArquivos.enderecoProjetos%><%=oListaArquivos.rs("foto")%>" >
     <meta property="og:image:type" content="image/jpeg" >
     <meta property="og:image:width" content="1600" >
     <meta property="og:image:height" content="690" >
 
-    <title></title>
+    <title><%=oListaArquivos.rs("seo_title")%></title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 <link rel="stylesheet" type="text/css" href="stylesheet/styleSliderSustentabilidade.css">
@@ -60,8 +70,8 @@ fjs.parentNode.insertBefore(js, fjs);
     <section class="filtros-e-navegacao">
         <div class="container">
             <div class="">
-                <form action="" method="post" class="frmFiltrosUso" name="frmFiltrosUso" id="frmFiltrosUso">
-                    <input type="button" value="< Voltar" style="cursor:pointer;" onclick="window.history.back(); return false;">
+                <form action="" method="post" class="frmFiltrosUso" name="frmFiltrosUso" id="frmFiltrosUso" style="width:150px; overflow:hidden">
+                    <input type="button" value="< Voltar" style="cursor:pointer; margin-left:-50px;" onclick="window.history.back(); return false;">
                 </form>
             </div>
         </div>
@@ -77,28 +87,19 @@ fjs.parentNode.insertBefore(js, fjs);
 
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-3">
-                    <img src="images/marc_projetos.jpg" alt="">
+                    <img src="<%=oListaArquivos.enderecoProjetos%><%=oListaArquivos.rs("foto")%>" alt="<%=oListaArquivos.rs("nome")%>" style="width:100%;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <div class="conteudo">
-                        <h2>Escola Norsal</h2>  
+                        <br>
+                        <h2><%=oListaArquivos.rs("nome")%></h2>  
+                        <br>
 
-                        <p><strong>OBJETIVO</strong><br>
-                        Elevar a escolaridade do trabalhador, com vistas ao domínio de competências para o exercício da cidadania e ao crescimento pessoal e profissional.</p>  
+                        <%=oListaArquivos.rs("texto")%>
 
-                        embed de video
+                        <div class="facebookCompartilhar">                            
+                            <a href="javascript:;" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<%=oListaArquivos.caminhoInicial%>%2Fsustentabilidade-interna.asp%3Fid%3D<%=oListaArquivos.rs("id")%>', 'facebook-share-dialog', 'width=626,height=436'); return false;" class="link-compartilhar" title="Compartilhe"><span class="fa fa-facebook"></span> Compartilhe</a>
 
-                        <p><strong>JUSTIFICATIVA</strong><br>
-                        Tendo em vista que vivemos em um mundo complexo, a educação se torna cada vez mais necessária. Dessa forma, a Norsal, em parceria com o SESI, implantou o Programa Educação do Trabalhador que atua no segmento da Educação de Jovens e Adultos - EJA, contribuindo, especificamente, com as pessoas que não tiveram oportunidade de concluir o ensino básico em tempo hábil, a partir dos 18 anos. A Escola Norsal desenvolve uma proposta pedagógica por meio de projetos em sala de aula, pelos quais já recebeu vários prêmios referentes às ações educativas realizadas. No Projeto “Construindo a Nação” promovido pelo SESI, a Escola foi contemplada com o primeiro lugar na categoria EJA, por três anos, legado de uma metodologia diferenciada, desenvolvida em sala de aula por professores qualificados.</p>
-                        
-                        <p>Nossa biblioteca, com mais de 3.000 volumes de livros didáticos e de literatura em geral que são disponibilizados a todos os colaboradores, contribui para a pesquisa e desenvolvimento cultural e educativo. Contamos ainda com uma biblioteca itinerante que realiza empréstimo de exemplares aos diferentes setores da empresa, facilitando a todos que queiram ampliar seus conhecimentos, pelo acesso a diversas obras.</p>
-                        
-                        <p><strong>PÚBLICO ALVO:</strong><br>
-                        Colaboradores da empresa. / Familiares (dependentes). / Comunidade.</p>
-
-
-                        <div class="facebookCompartilhar">
-                            <a href="javascript:;" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.sallebre.com.br/sustentabilidade-interna.asp', 'facebook-share-dialog', 'width=626,height=436'); return false;" class="link-compartilhar" title="Compartilhe"><span class="fa fa-facebook"></span> Compartilhe</a>
                             <!--
                             <a href="javascript:;" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<%'=oConexao.caminhoInicial%>%2Ftrabalho.asp%3Fid%3D<%'=oConexao.rs("id")%>&amp;src=sdkpreparse', 'facebook-share-dialog', 'width=626,height=436'); return false;" class="link-compartilhar" title="Compartilhe"><img src="images/btCompartilharFace.gif" alt="Compartilhar no Facebook"></a>
                             -->
@@ -128,54 +129,38 @@ fjs.parentNode.insertBefore(js, fjs);
                     <div class="contenido-slider">
                         <ul class="conteudo produtos slider">                        
 
-                            <li class="item-sustentabilidade">
+                            <%
+                            oListaArquivos.AbreTabela("select id,nome,foto from "&oListaArquivos.prefixoTabela&"produto where ativo='s' AND regTerminado='s' order by id asc")         
+
+                            varCssItem=""                  
+                            while not oListaArquivos.rs.eof
+                            %>
+
+                            <li class="item-sustentabilidade <%=varCssItem%>" <%=varStyle%>>
                                 <span class="item-imagem">
                                     <span class="item-content">
-                                        <h4>Sal Lebre MARINHO Refinado</h4>
+                                        <h4><%=oListaArquivos.rs("nome")%></h4>
                                     </span>
-                                    <img src="images/produtos/1.png" alt="">                                    
+                                    <img src="<%=oListaArquivos.enderecoProduto%><%=oListaArquivos.rs("foto")%>" alt="<%=oListaArquivos.rs("nome")%>">                                    
                                 </span>                                                 
                             </li>
-                            <li class="item-sustentabilidade invert-cor">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE LIGHT</h4>
-                                    </span>
-                                    <img src="images/produtos/2.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE SACHÊ</h4>
-                                    </span>
-                                    <img src="images/produtos/3.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade invert-cor">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>Sal Lebre MARINHO Refinado</h4>
-                                    </span>
-                                    <img src="images/produtos/1.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE LIGHT</h4>
-                                    </span>
-                                    <img src="images/produtos/2.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade invert-cor">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE SACHÊ</h4>
-                                    </span>
-                                    <img src="images/produtos/3.png" alt="">                                    
-                                </span>                                                 
-                            </li>                            
+
+                            <%
+                            oListaArquivos.rs.MoveNext()      
+                                if varCssItem="" then
+                                varCssItem="invert-cor"
+                                varStyle="style='background:#f3f3f3'"
+                                else
+                                varCssItem=""
+                                varStyle=""
+                                end if                          
+                            wend
+                            oListaArquivos.rs.Close()
+                            set oListaArquivos.rs = nothing
+                            %>
+
+
+
 
                         </ul>
                     </div>

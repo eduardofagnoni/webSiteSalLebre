@@ -1,4 +1,4 @@
-<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.166 57.515">
+<svg id="Camada_1" data-name="Camada 1" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 54.166 57.515">
   <defs>
     <style>
       .cls-1-a-cristalizacao {

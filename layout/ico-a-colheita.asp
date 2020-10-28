@@ -1,4 +1,4 @@
-<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.369 60.784">
+<svg id="Camada_1" data-name="Camada 1" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 45.369 60.784">
   <defs>
     <style>
       .cls-1-a-colheita, .cls-2-a-colheita {

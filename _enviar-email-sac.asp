@@ -1,5 +1,5 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
 
 <%
 Dim oConexao
@@ -9,6 +9,8 @@ oConexao.AbreConexao()
 Dim oConexaoAdd
 Set oConexaoAdd = New Conexao
 oConexaoAdd.AbreConexao()
+
+on error resume next
 
 '*********************************************************
 'função para limpar strings e proteger contra SQLInjection
@@ -39,6 +41,37 @@ varAssunto = SafeSQL(request.form("txtAssunto"))
 varNome = SafeSQL(LCase(request.form("txtNome")))
 varSexo = SafeSQL(request.form("txtSexo"))
 varDataNascimento = SafeSQL_HTML(request.form("txtDataNascimento"))
+
+
+
+if varAssunto="1" then
+varNomeAssunto="Vendas"
+emailTo="vendas@norsal.com.br"
+elseif varAssunto="7" then
+varNomeAssunto="RH"
+emailTo="rh@norsal.com.br"
+elseif varAssunto="2" then
+varNomeAssunto="Logistica"
+emailTo="guilherme.pinheiro@norsal.com.br"
+elseif varAssunto="3" then
+varNomeAssunto="Fiscal"
+emailTo="consuelita.rodrigues@norsal.com.br"
+elseif varAssunto="4" then
+varNomeAssunto="Compras"
+emailTo="compras.ab@norsal.com.br"
+elseif varAssunto="8" then
+varNomeAssunto="Cobranca"
+emailTo="cobranca@norsal.com.br"
+elseif varAssunto="5" then
+varNomeAssunto="Financeiro (Fornecedores)"
+emailTo="financeiro@norsal.com.br"
+elseif varAssunto="9" then
+varNomeAssunto="TI"
+emailTo="suporte@norsal.com.br"
+end if
+
+
+
     ' preparando a data de nascimento para gravacao
     if varDataNascimento<>"" then
         varDataNascimento = replace(varDataNascimento,"/",".")
@@ -88,38 +121,21 @@ oConexaoAdd.AddItem("INSERT INTO "&oConexaoAdd.prefixoTabela&"contatos (assunto,
 Set objCDOSYSMail = Server.CreateObject("CDO.Message")
 Set objCDOSYSCon = Server.CreateObject ("CDO.Configuration")
 
-'com autenticação'		 
-    'SERVIDOR DE SMTP 
-    objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpserver") = oConexaoAdd.SMTP_envioDeEmailsSistema	 
-    'PORTA PARA COMUNICAÇÃO COM O SERVIÇO DE SMTP 
-    objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = oConexaoAdd.porta_SMTP	 
-    'Utilização de SSl 
-    'objCDOSYSCon.Fields.Item("http://schemas.microsoft.com/cdo/configuration/smtpusessl") = True	 
-    objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2	 
-    'ATIVAR RECURSO DE SMTP AUTENTICADO 
-    objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1 	 
-    'USU?RIO PARA SMTP AUTENTICADO 
-    objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/sendusername") = oConexaoAdd.EmailContaEnvioMsgsSistema 	 
-    'SENHA DO USUÁRIO PARA SMTP AUTENTICADO 
-    objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/sendpassword") = oConexaoAdd.SenhaEmailEnvioMsgsSistema 	 
-    'TEMPO DE TIMEOUT (EM SEGUNDOS) 
-    objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
-
-'objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "localhost"
-'objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
-'objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
-'objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 30
+objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "localhost"
+objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+objCDOSYSCon.Fields("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 30
 
 objCDOSYSCon.Fields.update 
 
 Set objCDOSYSMail.Configuration = objCDOSYSCon
 objCDOSYSMail.From = oConexaoAdd.EmailFromSistema
-objCDOSYSMail.To = oConexaoAdd.emailDuvidasESugestoes
+objCDOSYSMail.To = "sac@norsal.com.br"
 objCDOSYSMail.Bcc = oConexaoAdd.EmailCopiaOculta   
-objCDOSYSMail.Subject = varAssunto
+objCDOSYSMail.Subject = varNomeAssunto
 
 'montando a mensagem'
-mensagem ="<thml><body><p>Assunto: "&varAssunto&"</p><p>Nome: "&varNome&"</p><p>Sexo: "&varSexo&"</p><p>Data de nascimento: "&varDataNascimento&"</p><p>Email: "&varEmail&"</p><p>Telefone: "&varTelefone&"</p><p>Endereço: "&varEndereco&"</p><p>Número: "&varNumero&"</p><p>Bairro: "&varBairro&"</p><p>Cidade: "&varCidade&"</p><p>Estado: "&varEstado&"</p><p>Complemento: "&varComplemento&"</p><p>CEP: "&varCep&"</p><p>Mensagem: "&varMensagem&"</p></body></thml>"
+mensagem ="<html><body><p>Assunto: "&varNomeAssunto&"</p><p>Nome: "&varNome&"</p><p>Sexo: "&varSexo&"</p><p>Data de nascimento: "&varDataNascimento&"</p><p>Email: "&varEmail&"</p><p>Telefone: "&varTelefone&"</p><p>Endereço: "&varEndereco&"</p><p>Número: "&varNumero&"</p><p>Bairro: "&varBairro&"</p><p>Cidade: "&varCidade&"</p><p>Estado: "&varEstado&"</p><p>Complemento: "&varComplemento&"</p><p>CEP: "&varCep&"</p><p>Mensagem: "&varMensagem&"</p></body></html>"
 
 objCDOSYSMail.HtmlBody = mensagem
 

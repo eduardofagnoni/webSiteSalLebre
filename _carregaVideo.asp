@@ -4,9 +4,11 @@ id = request.querystring("id")
 
 Select Case id
     Case 1
-        video = "ErHo_oCkspc"
+        video = "fxdpzkm9IpY"
     Case 2
-        video = "AD_62lBXGT4"
+        video = "FtdfX3R942A"
+	Case 3
+        video = "TB7Kr0kBw0g"
     Case else
         video = ""      
 End Select

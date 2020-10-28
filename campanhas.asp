@@ -1,15 +1,15 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Assista o filme para a TV da mais nova campanha institucional da Sal Lebre, a marca de sal mais vendida e variada do país.">
+    <meta name="keywords" content="sal lebre, marca de sal, marcas de sal, melhores marcas de sal, melhor sal, linha de sal, maior linha de sal, sal mais vendido, sal número ummm, sal número 1, corre solto no saleiro.">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
-    <title></title>
+    <title>Sal Lebre – O sal número UMMMMM do Brasil.</title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 <link rel="stylesheet" type="text/css" href="stylesheet/styleCampanhas.css">
 <!-- #include file="layout/menu.asp"-->
 
-<section class="banner-internas" style="background: url(images/topo-campanha.jpg) no-repeat center top; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<section class="banner-internas topo-campanhas" >
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -38,7 +38,7 @@ Confira nossa mais recente campanha publicitária.</p>
     <section class="video-campanha">
         <div class="pelicula-transparencia wow fadeInLeft animate" data-wow-delay=".15s">
             <div class="content-texto wow fadeInRight animate" data-wow-delay=".65s">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                <p>CONFIRA NOSSO PRIMEIRO COMERCIAL INSTITUCIONAL.</p>
             </div>           
         </div>
         <div class="play-video wow fadeInUp animate" data-wow-delay=".75s" data-toggle="modal" data-target="#myModal"  onclick="abreFoto(1)"><span class="fa fa-play"></span></div>
@@ -50,10 +50,25 @@ Confira nossa mais recente campanha publicitária.</p>
         </div>
     </section>
 
+    <section class="video-manifesto">
+        <div class="pelicula-transparencia wow fadeInLeft animate" data-wow-delay=".15s">
+            <div class="content-texto wow fadeInRight animate" data-wow-delay=".65s">
+                <p>um país unido, um compromisso.</p>
+            </div>           
+        </div>
+        <div class="play-video wow fadeInUp animate" data-wow-delay=".75s" data-toggle="modal" data-target="#myModal"  onclick="abreFoto(3)"><span class="fa fa-play"></span></div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <button type="button" class="close-video-manifesto" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></button>
+            <div class="iframe" id="fotoaqui"></div>
+        </div>
+    </section>
+
     <section class="video-making-off">
         <div class="esquerda"></div>
         <div class="direita"></div>
-        <div class="text-video-making-off wow fadeInUp animate" data-toggle="modal" data-target="#myModal"  onclick="abreFoto(2)"><span class="play-video-making-off"><span class="fa fa-play"></span></span>  &nbsp;&nbsp;&nbsp;confira o MAKING OFF</div>
+        <div class="text-video-making-off wow fadeInUp animate" data-toggle="modal" data-target="#myModal"  onclick="abreFoto(2)"><span class="play-video-making-off"><span class="fa fa-play"></span></span> &nbsp;&nbsp;confira o MAKING OF</div>
     </section>
     
     

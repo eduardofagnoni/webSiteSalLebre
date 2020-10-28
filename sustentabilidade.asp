@@ -1,9 +1,14 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
+<%
+Dim oListaArquivos
+Set oListaArquivos = New Conexao
+oListaArquivos.AbreConexao()
+%>
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Além de se preocupar com a mais alta qualidade do sal, desenvolvemos diversos programas que visam o bem-estar social e a preservação do meio ambiente. Acesse para saber mais!">
+    <meta name="keywords" content="sal saudável, sal responsável, sal natural, sal ecológico, bem-estar, sustentabilidade, projetos sociais, preservação do meio ambiente.">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
-    <title></title>
+    <title>Sal Lebre – Faz bem para você e para o meio ambiente.</title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 <link rel="stylesheet" type="text/css" href="stylesheet/styleSustentabilidade.css">
@@ -53,10 +58,10 @@
         <div class="container">
             <div class="texto-tabela">
                 <div class="coluna">
-                    <h2>Faz bem para a saúde, para a sociedade e para o meio ambiente.</h2>
+                    <h2 style="font-weight:normal;padding-top:20px; padding-bottom:20px;">Faz bem para a saúde, para a sociedade e para o meio ambiente.</h2>
                 </div>
                 <div class="coluna">
-                    <p>Nosso comprometimento não é apenas com a qualidade de nosso sal. Desenvolvemos uma série de projetos voltados para a sociedade como um todo e ao meio ambiente.</p>                    
+                    <p style="padding-top:20px; padding-bottom:20px;">Nosso comprometimento não é apenas com a qualidade de nosso sal. Desenvolvemos uma série de projetos voltados para a sociedade como um todo e ao meio ambiente.</p>                    
                 </div>
             </div>
         </div>
@@ -66,7 +71,7 @@
         <div class="container">
             <div class="">            
             <form action="" method="post" class="frmFiltrosUso" name="frmFiltrosUso" id="frmFiltrosUso">
-                <input type="search" name="search" id="search"  placeholder="digite aqui sua busca" data-list=".list">
+                <input type="search" name="search" id="search"  placeholder="digite aqui sua busca" data-list=".list"><span class="fa fa-search" style="color:#ffffff;"></span>
             </form>
             </div>
         </div>
@@ -76,17 +81,22 @@
         <div class="container">
             <div class="row list">
 
+                <%
+                oListaArquivos.AbreTabela("select id,nome,foto from "&oListaArquivos.prefixoTabela&"projeto where ativo='s' AND regTerminado='s' order by id asc")                           
+                while not oListaArquivos.rs.eof
+                %>   
+
                 <div class="col-xs-12 col-md-6 item">
-                    <a href="sustentabilidade-interna.asp">
+                    <a href="sustentabilidade-interna.asp?id=<%=oListaArquivos.rs("id")%>">
                     <div class="row tabela">                        
                             <div class="col-xs-12 col-md-6 coluna">
                                 <div>
-                                    <img src="images/marc_projetos.jpg" alt="">
+                                    <img src="<%=oListaArquivos.enderecoProjetos%><%=oListaArquivos.rs("foto")%>" alt="<%=oListaArquivos.rs("nome")%>">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-6 coluna">
                                 <aside>
-                                    <h3>Escola Norsal</h3>
+                                    <h3><%=oListaArquivos.rs("nome")%></h3>
                                     <button>Conheça <span class="fa fa-angle-right"></span></button>
                                 </aside>                                
                             </div>                        
@@ -94,41 +104,14 @@
                     </a>
                 </div>
 
-                <div class="col-xs-12 col-md-6 item">
-                    <a href="sustentabilidade-interna.asp">
-                    <div class="row tabela">                        
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <div>
-                                    <img src="images/marc_projetos.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <aside>
-                                    <h3>Teste 2</h3>
-                                    <button>Conheça <span class="fa fa-angle-right"></span></button>
-                                </aside>                                
-                            </div>                        
-                    </div>
-                    </a>
-                </div>
+                <%
+                oListaArquivos.rs.MoveNext()                                
+                wend
+                oListaArquivos.rs.Close()
+                set oListaArquivos.rs = nothing
+                %>
 
-                <div class="col-xs-12 col-md-6 item">
-                    <a href="sustentabilidade-interna.asp">
-                    <div class="row tabela">                        
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <div>
-                                    <img src="images/marc_projetos.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <aside>
-                                    <h3>Mais um</h3>
-                                    <button>Conheça <span class="fa fa-angle-right"></span></button>
-                                </aside>                                
-                            </div>                        
-                    </div>
-                    </a>
-                </div>
+
 
             </div>
         </div>

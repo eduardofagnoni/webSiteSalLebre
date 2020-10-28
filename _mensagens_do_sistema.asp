@@ -72,4 +72,4 @@ end if
 %>
 
 <!-- Botoneira -->
-<script src="dist/js/botoneira.js"></script>
+<!--<script src="dist/js/botoneira.js"></script>-->

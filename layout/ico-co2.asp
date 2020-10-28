@@ -1,4 +1,4 @@
-<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 58.821 41.361">
+<svg id="Camada_1" data-name="Camada 1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 58.821 41.361">
   <defs>
     <style>
       .cls-1-co2 {

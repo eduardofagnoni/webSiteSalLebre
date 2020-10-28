@@ -490,7 +490,7 @@ lista de projetos
   text-align: left;
 }
 .lista-projetos .tabela .coluna button span {
-  float: right;
+  padding: 0 0 0 20px;
   font-size: 15px;
 }
 .lista-projetos .tabela .coluna aside {
@@ -605,4 +605,12 @@ o projeto //
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+}
+.text-geral-format * {
+  font-family: 'Open Sans', sans-serif;
+  color: #00448a;
+}
+.text-geral-format ul {
+  margin: 0 0 0 20px;
+  padding: 0;
 }

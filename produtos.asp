@@ -1,9 +1,18 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
+<%
+Dim oListaArquivos
+Set oListaArquivos = New Conexao
+oListaArquivos.AbreConexao()
+
+Dim oListaReceitas
+Set oListaReceitas = New Conexao
+oListaReceitas.AbreConexao()
+%>
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Sal Lebre é a linha de sal mais variada e vendida do Brasil. Nossos produtos estão presentes nos 4 cantos do país e atendem até os consumidores mais exigentes.">
+    <meta name="keywords" content="sal lebre, comprar sal, sal marinho, sal iodado, sal refinado, sal para churrasco, sal granulado, sal moído, sal do himalaia, sal gourmet, sal bom, sal de qualidade, marcas de sal, tipos de sal, sal de supermercado, sal para varejo, marcas de sal, melhor marca de sal, sal de alto padrão, linha de sal.">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
-    <title></title>
+    <title>Sal Lebre – A linha mais completa do mercado.</title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 <link rel="stylesheet" type="text/css" href="stylesheet/styleSlider.css">
@@ -61,6 +70,7 @@
                     <option value="7">Flor de Sal</option>
                 </select>
             </form>
+            <!--
             <form action="" method="post" class="frmFiltrosUso" name="frmFiltrosUso" id="frmFiltrosUso">
                 <select onchange="this.form.submit()" name="txtTipoDeUso" id="txtTipoDeUso">
                     <option>Selecione o uso</option>
@@ -68,110 +78,44 @@
                     <option value="b">Tipo de uso b</option>
                 </select>
             </form>
+            -->
             </div>
         </div>
     </section>
 
     <section class="lista-alternada-de-produtos">        
         <ul>
+
+            <%
+            oListaArquivos.AbreTabela("select id,idTipo,idUso,nome,resumo,embalagens,foto from "&oListaArquivos.prefixoTabela&"produto where ativo='s' AND regTerminado='s' order by id asc")                           
+            while not oListaArquivos.rs.eof
+            %>   
+
             <li>  
                 <div class="container">                 
                     <div class="foto-produto">
-                        <img src="images/produtos/1.png" alt="" class="wow fadeInLeft animate" data-wow-delay=".15s">
+                        <img src="<%=oListaArquivos.enderecoProduto%><%=oListaArquivos.rs("foto")%>" alt="<%=oListaArquivos.rs("nome")%>" class="wow fadeInLeft animate" data-wow-delay=".15s">
                     </div>
                     <div class="descricao-produto">
-                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre MARINHO Refinado</h3>
-                        <p class="wow fadeInUp animate" data-wow-delay=".35s">O sal número UMMMMM do Brasil, feito com cristais de sal marinho. Cai bem em qualquer receita e faz sucesso em todo o país. Tem altíssima qualidade e fluidez.</p>
-                        <small class="wow fadeInUp animate"  data-wow-delay=".45s">Embalagens</small>
-                        <p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
-                        Pacote de 1 kg para cozinha</p>
+                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s"><%=oListaArquivos.rs("nome")%></h3>
+                        <p class="wow fadeInUp animate" data-wow-delay=".35s"><%=oListaArquivos.rs("resumo")%></p>
+                        <small class="wow fadeInUp animate" data-wow-delay=".45s">Embalagens</small>
+                        <!--<p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
+                        Pacote de 1 kg para cozinha</p>-->
+                        <div class="wow fadeInUp animate" data-wow-delay=".55s"><%=oListaArquivos.rs("embalagens")%></div>
                     </div>
                 </div>
             </li>
-            <li>  
-                <div class="container">                 
-                    <div class="foto-produto">
-                        <img src="images/produtos/2.png" alt="" class="wow fadeInRight animate" data-wow-delay=".15s">
-                    </div>
-                    <div class="descricao-produto">
-                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre MARINHO Refinado</h3>
-                        <p class="wow fadeInUp animate" data-wow-delay=".35s">O sal número UMMMMM do Brasil, feito com cristais de sal marinho. Cai bem em qualquer receita e faz sucesso em todo o país. Tem altíssima qualidade e fluidez.</p>
-                        <small class="wow fadeInUp animate"  data-wow-delay=".45s">Embalagens</small>
-                        <p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
-                        Pacote de 1 kg para cozinha</p>
-                    </div>
-                </div>
-            </li>
-            <li>  
-                <div class="container">                 
-                    <div class="foto-produto">
-                        <img src="images/produtos/3.png" alt="" class="wow fadeInLeft animate" data-wow-delay=".15s">
-                    </div>
-                    <div class="descricao-produto">
-                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre MARINHO Refinado</h3>
-                        <p class="wow fadeInUp animate" data-wow-delay=".35s">O sal número UMMMMM do Brasil, feito com cristais de sal marinho. Cai bem em qualquer receita e faz sucesso em todo o país. Tem altíssima qualidade e fluidez.</p>
-                        <small class="wow fadeInUp animate"  data-wow-delay=".45s">Embalagens</small>
-                        <p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
-                        Pacote de 1 kg para cozinha</p>
-                    </div>
-                </div>
-            </li>
-            <li>  
-                <div class="container">                 
-                    <div class="foto-produto">
-                        <img src="images/produtos/2.png" alt="" class="wow fadeInRight animate" data-wow-delay=".15s">
-                    </div>
-                    <div class="descricao-produto">
-                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre MARINHO Refinado</h3>
-                        <p class="wow fadeInUp animate" data-wow-delay=".35s">O sal número UMMMMM do Brasil, feito com cristais de sal marinho. Cai bem em qualquer receita e faz sucesso em todo o país. Tem altíssima qualidade e fluidez.</p>
-                        <small class="wow fadeInUp animate"  data-wow-delay=".45s">Embalagens</small>
-                        <p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
-                        Pacote de 1 kg para cozinha</p>
-                    </div>
-                </div>
-            </li>
-            <li>  
-                <div class="container">                 
-                    <div class="foto-produto">
-                        <img src="images/produtos/1.png" alt="" class="wow fadeInLeft animate" data-wow-delay=".15s">
-                    </div>
-                    <div class="descricao-produto">
-                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre MARINHO Refinado</h3>
-                        <p class="wow fadeInUp animate" data-wow-delay=".35s">O sal número UMMMMM do Brasil, feito com cristais de sal marinho. Cai bem em qualquer receita e faz sucesso em todo o país. Tem altíssima qualidade e fluidez.</p>
-                        <small class="wow fadeInUp animate"  data-wow-delay=".45s">Embalagens</small>
-                        <p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
-                        Pacote de 1 kg para cozinha</p>
-                    </div>
-                </div>
-            </li>
-            <li>  
-                <div class="container">                 
-                    <div class="foto-produto">
-                        <img src="images/produtos/2.png" alt="" class="wow fadeInRight animate" data-wow-delay=".15s">
-                    </div>
-                    <div class="descricao-produto">
-                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre MARINHO Refinado</h3>
-                        <p class="wow fadeInUp animate" data-wow-delay=".35s">O sal número UMMMMM do Brasil, feito com cristais de sal marinho. Cai bem em qualquer receita e faz sucesso em todo o país. Tem altíssima qualidade e fluidez.</p>
-                        <small class="wow fadeInUp animate"  data-wow-delay=".45s">Embalagens</small>
-                        <p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
-                        Pacote de 1 kg para cozinha</p>
-                    </div>
-                </div>
-            </li>
-            <li>  
-                <div class="container">                 
-                    <div class="foto-produto">
-                        <img src="images/produtos/3.png" alt="" class="wow fadeInLeft animate" data-wow-delay=".15s">
-                    </div>
-                    <div class="descricao-produto">
-                        <h3 class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre MARINHO Refinado</h3>
-                        <p class="wow fadeInUp animate" data-wow-delay=".35s">O sal número UMMMMM do Brasil, feito com cristais de sal marinho. Cai bem em qualquer receita e faz sucesso em todo o país. Tem altíssima qualidade e fluidez.</p>
-                        <small class="wow fadeInUp animate"  data-wow-delay=".45s">Embalagens</small>
-                        <p class="wow fadeInUp animate"  data-wow-delay=".55s">Saleiro de 100 g para mesa <br>
-                        Pacote de 1 kg para cozinha</p>
-                    </div>
-                </div>
-            </li>
+
+            <%
+            oListaArquivos.rs.MoveNext()                                
+            wend
+            oListaArquivos.rs.Close()
+            set oListaArquivos.rs = nothing
+            %>
+
+
+
         </ul>        
     </section>
 
@@ -185,33 +129,34 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 coluna-de-produtos">
                     <div class="contenido-slider">
                         <ul class="conteudo receitas receita-slider">
+                            
+                            <%
+                            oListaReceitas.AbreTabela("select id,nome,foto from "&oListaReceitas.prefixoTabela&"receitas where ativo='s' AND regTerminado='s' order by id asc")
+
+                            while not oListaReceitas.rs.eof  
+                            %>
+                            
                             <li class="item">
-                                <a href="">
-                                    <span class="item-imagem" style="background:url(images/receitas/foto.jpg) no-repeat center center;background-size: cover;">
-                                        <div class="caixa-titulo wow fadeInLeft animate">O nome da receita fica aqui nesse quadro.</div>
+                                <a href="receitas-interna.asp?id=<%=oListaReceitas.rs("id")%>">
+                                    <span class="item-imagem" style="background:url(<%=oListaReceitas.enderecoReceita%><%=oListaReceitas.rs("foto")%>) no-repeat center center;background-size: cover;">
+                                        <div class="caixa-titulo wow fadeInLeft animate"><%=oListaReceitas.rs("nome")%></div>
                                     </span>    
                                 </a>                                                   
-                            </li>
-                            <li class="item">
-                                <a href="">
-                                    <span class="item-imagem" style="background:url(images/receitas/foto.jpg) no-repeat center center;background-size: cover;">
-                                        <div class="caixa-titulo">O nome da receita fica aqui nesse quadro.</div>
-                                    </span>    
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="">
-                                    <span class="item-imagem" style="background:url(images/receitas/foto.jpg) no-repeat center center;background-size: cover;">
-                                        <div class="caixa-titulo">O nome da receita fica aqui nesse quadro.</div>
-                                    </span>    
-                                </a> 
-                            </li>
+                            </li>                               
+
+                            <%
+                            oListaReceitas.rs.MoveNext()
+                            wend
+                            oListaReceitas.rs.Close()
+                            set oListaReceitas.rs = nothing
+                            %> 
+
                         </ul>
 
                         <ul class="controles">
                             <li class="receita-left"><span class="fa fa-angle-left"></span></li>
                             <li class="receita-right"><span class="fa fa-angle-right"></span></li>
-                            <li class="btn btn-azul">Conheça a linha completa</li>
+                            <li class="btn btn-azul" onclick="location.href='receitas.asp'">Veja todas as receitas</li>
                         </ul>
                     </div>
                 </div>

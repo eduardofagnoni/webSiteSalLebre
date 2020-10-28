@@ -1,4 +1,4 @@
-<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.48 40.883">
+<svg id="Camada_1" data-name="Camada 1" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 59.48 40.883">
   <defs>
     <style>
       .cls-1-caminho-das-aguas {

@@ -4,6 +4,10 @@
         <script src="js/konami.js" async defer></script>
         <script src="js/custom.js"></script>
         <script src="js/wow.min.js"></script>
+        <script src="administrador/vendors/js/mascaras.js"></script>
+
+
+        <!--<script src="js/popexit.min.js" async defer></script>-->
 
         <script>
         
@@ -59,6 +63,32 @@
                 });
             });
             */
+
+
+
+
+            var frm = $('#idFrmExitPopup');
+
+            frm.submit(function (e) {
+
+                e.preventDefault();
+
+                $.ajax({
+                    type: frm.attr('method'),
+                    url: frm.attr('action'),
+                    data: frm.serialize(),
+                    success: function (data) {
+                        //console.log('Submission was successful.');
+                        //console.log(data);
+                        $('#idFrmExitPopup input, #idFrmExitPopup button, #idFrmExitPopup .imgTit, #idFrmExitPopup p').css({'display':'none'});
+                        $('.popObrigado').css({'display':'block'});
+                    },
+                    error: function (data) {
+                        console.log('An error occurred.');
+                        console.log(data);
+                    },
+                });
+            });
 
         
         </script>

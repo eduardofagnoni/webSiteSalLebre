@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+
+        <rewrite>
+            <rules>
+                <clear />
+                <rule name="Redirect to https" stopProcessing="true">
+                    <match url=".*" />
+                    <conditions>
+                        <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+                    </conditions>
+                    <action type="Redirect" url="https://sallebre.com.br" 
+                    redirectType="Permanent" appendQueryString="false" />
+                </rule>
+            </rules>
+        </rewrite>
+
+        <staticContent>
+			<!-- Set expire headers to 30 days for static content-->
+			<clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="-30.00:00:00" />
+		</staticContent>
+
+        <httpErrors errorMode="Custom" defaultResponseMode="ExecuteURL">
+			<remove statusCode="404" subStatusCode="-1" />
+            <error statusCode="404" path="/404/default.asp" responseMode="ExecuteURL" />
+        </httpErrors>
+        
+    </system.webServer>
+</configuration>

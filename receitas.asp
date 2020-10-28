@@ -1,9 +1,18 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
+<%
+Dim oListaArquivos
+Set oListaArquivos = New Conexao
+oListaArquivos.AbreConexao()
+
+Dim oListaCategoria
+Set oListaCategoria = New Conexao
+oListaCategoria.AbreConexao()
+%>
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Apenas a linha de sal mais variada do mercado pode oferecer um tipo de sal perfeito para cada tipo de receita. Confira nossas dicas e receitas.">
+    <meta name="keywords" content="marca de sal, marcas de sal, melhores marcas de sal, melhor sal, tipos de sal, linha de sal, sal mais indicado, sal ideal, receita, dicas culinárias.">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
-    <title></title>
+    <title>Sal Lebre – Dicas e receitas saborosas e saudáveis.</title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 <link rel="stylesheet" type="text/css" href="stylesheet/styleSliderSustentabilidade.css">
@@ -42,7 +51,7 @@
             <div class="">
             
             <form action="" method="post" class="frmFiltrosUso" name="frmFiltrosUso" id="frmFiltrosUso">
-                <input type="search" name="search" id="search"  placeholder="Encontre a receita" data-list=".list">
+                <input type="search" name="search" id="search"  placeholder="Encontre a receita" data-list=".list"><span class="fa fa-search" style="color:#ffffff;"></span>
             </form>
             </div>
         </div>
@@ -52,62 +61,48 @@
         <div class="container">
             <div class="row list">
 
+
+                <%
+                oListaArquivos.AbreTabela("select id,idCategoria,nome,resumo,foto from "&oListaArquivos.prefixoTabela&"receitas where ativo='s' AND regTerminado='s' order by id desc")                           
+                while not oListaArquivos.rs.eof
+
+                    'seleciona a categoria corrente
+                    oListaCategoria.AbreTabela("select id,nome from "&oListaCategoria.prefixoTabela&"categoria_da_receita where ativo='s' AND regTerminado='s' AND id="&oListaArquivos.rs("idCategoria"))   
+                    varCategoria = oListaCategoria.rs("nome")
+
+                %>   
+
                 <div class="col-xs-12 col-md-6 item">
-                    <a href="receitas-interna.asp">
+                    <a href="receitas-interna.asp?id=<%=oListaArquivos.rs("id")%>">
                     <div class="row tabela">                        
                             <div class="col-xs-12 col-md-6 coluna">
-                                <div>
-                                    <img src="images/marc_receitas.jpg" alt="">
+                                <div style="overflow: hidden;height: 318px;">
+                                    <img src="<%=oListaArquivos.enderecoReceita%><%=oListaArquivos.rs("foto")%>" alt="" style="height:318px;width:471px;">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-6 coluna">
                                 <aside>
-                                    <h3>Acompanhamento</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                    <button>Conheça <span class="fa fa-angle-right"></span></button>
+                                    <h3><%=varCategoria%></h3>
+                                    <p><%=oListaArquivos.rs("nome")%><br>
+                                    <span style="font-weight:normal; font-size:14px"><%=oListaArquivos.rs("resumo")%></span></p>
+                                    <button>Ver receita <span class="fa fa-angle-right"></span></button>
                                 </aside>                                
-                            </div>                        
+                            </div>
                     </div>
                     </a>
                 </div>
 
-                <div class="col-xs-12 col-md-6 item">
-                    <a href="receitas-interna.asp">
-                    <div class="row tabela">                        
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <div>
-                                    <img src="images/marc_receitas.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <aside>
-                                    <h3>Sanduiches</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                    <button>Conheça <span class="fa fa-angle-right"></span></button>
-                                </aside>                                
-                            </div>                        
-                    </div>
-                    </a>
-                </div>
+                <%
+                oListaArquivos.rs.MoveNext()
+                wend
+                oListaArquivos.rs.Close()
+                set oListaArquivos.rs = nothing
+                %>
 
-                <div class="col-xs-12 col-md-6 item">
-                    <a href="receitas-interna.asp">
-                    <div class="row tabela">                        
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <div>
-                                    <img src="images/marc_receitas.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6 coluna">
-                                <aside>
-                                    <h3>Peixes</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                    <button>Conheça <span class="fa fa-angle-right"></span></button>
-                                </aside>                                
-                            </div>                        
-                    </div>
-                    </a>
-                </div>
+
+
+
+
 
             </div>
         </div>
@@ -132,54 +127,43 @@
                     <div class="contenido-slider">
                         <ul class="conteudo produtos slider">                        
 
-                            <li class="item-sustentabilidade">
+
+                            <%
+                            oListaArquivos.AbreTabela("select id,nome,foto from "&oListaArquivos.prefixoTabela&"produto where ativo='s' AND regTerminado='s' order by id asc")         
+
+                            varCssItem=""                  
+                            while not oListaArquivos.rs.eof
+                            %>
+
+                            <li class="item-sustentabilidade <%=varCssItem%>" <%=varStyle%>>
                                 <span class="item-imagem">
                                     <span class="item-content">
-                                        <h4>Sal Lebre MARINHO Refinado</h4>
+                                        <h4><%=oListaArquivos.rs("nome")%></h4>
                                     </span>
-                                    <img src="images/produtos/1.png" alt="">                                    
+                                    <img src="<%=oListaArquivos.enderecoProduto%><%=oListaArquivos.rs("foto")%>" alt="<%=oListaArquivos.rs("nome")%>">                                    
                                 </span>                                                 
                             </li>
-                            <li class="item-sustentabilidade invert-cor">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE LIGHT</h4>
-                                    </span>
-                                    <img src="images/produtos/2.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE SACHÊ</h4>
-                                    </span>
-                                    <img src="images/produtos/3.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade invert-cor">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>Sal Lebre MARINHO Refinado</h4>
-                                    </span>
-                                    <img src="images/produtos/1.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE LIGHT</h4>
-                                    </span>
-                                    <img src="images/produtos/2.png" alt="">                                    
-                                </span>                                                 
-                            </li>
-                            <li class="item-sustentabilidade invert-cor">
-                                <span class="item-imagem">
-                                    <span class="item-content">
-                                        <h4>SAL LEBRE SACHÊ</h4>
-                                    </span>
-                                    <img src="images/produtos/3.png" alt="">                                    
-                                </span>                                                 
-                            </li>                            
+
+                            <%
+                            oListaArquivos.rs.MoveNext()      
+                                if varCssItem="" then
+                                varCssItem="invert-cor"
+                                varStyle="style='background:#f3f3f3'"
+                                else
+                                varCssItem=""
+                                varStyle=""
+                                end if                          
+                            wend
+                            oListaArquivos.rs.Close()
+                            set oListaArquivos.rs = nothing
+                            %>
+
+
+
+
+
+
+                                                  
 
                         </ul>
                     </div>

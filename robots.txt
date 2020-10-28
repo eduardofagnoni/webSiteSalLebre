@@ -3,4 +3,4 @@ User-agent: *
 Disallow: /assets/
 Disallow: /bootstrap/
 Disallow: /plugins/
-Disallow: /admin/
+Disallow: /administrador/

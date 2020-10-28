@@ -1,9 +1,16 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
+
+<%
+Dim oListaArquivos
+Set oListaArquivos = New Conexao
+oListaArquivos.AbreConexao()
+%>
+
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="O Sal Lebre é produzido em uma das maiores salinas da América Latina. Anualmente são produzidas toneladas de sal saudável, natural e sustentável.">
+    <meta name="keywords" content="sal marinho, sal natural, sal de qualidade, fábrica de sal, indústria de sal, produção de sal, produtor de sal, produtora de sal, sal saudável, salina, maior salina, salineira, maior produção de sal, manufatura de sal, sal sustentável, sal seguro, processo do sal, fazer sal, sal sem químicos, norsal, salina miramar ">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
-    <title></title>
+    <title>Sal Lebre – Conheça nosso processo de produção</title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 <link rel="stylesheet" type="text/css" href="stylesheet/styleSliderSalinas.css">
@@ -15,10 +22,19 @@
 <section class="banner-internas" style="background: url(images/topo-nosso-sal.jpg) no-repeat center top; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; position:relative;">
 	<div class="container">
         <div class="bg-folha"></div>
+        <div class="row">			
+			<div class="col-xs-12">
+				<h1>Nosso Sal</h1>
+			</div>						
+		</div>
 	</div>
 </section>
 
-<main>	
+
+
+<main>
+
+    <span id="producao"></span>
     <section class="textos-laterais sec-1" style="background:#ffffff;">
         <div class="bg-folhas-e-limao">
             <div class="bg-prato wow fadeInRight animate"></div>
@@ -53,6 +69,7 @@
         </div>
     </section>
 
+    <span id="do-mar-ate-sua-mesa"></span>
     <section class="sec-2">
         <div class="container">
             <div class="row">
@@ -111,12 +128,13 @@
         </div>
     </section>
 
+    <span id="salinas-miramar"></span>
     <section class="conteiner-slider textos-laterais sec-3">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <h2 class="wow fadeInUp animate" data-wow-delay=".15s">Conheça um pouco<br>dos 2.000 hectares<br>da nossa salina.</h2>
-                    <p class="align-rigth wow fadeInUp animate"  data-wow-delay=".25s">Confira as fotos da Salina Miramar, onde o melhor sal do Brasil é produzido.</p>
+                    <p class="align-rigth wow fadeInUp animate"  data-wow-delay=".25s" style="color:#00448a;">Confira as fotos da Salina Miramar, onde o melhor sal do Brasil é produzido.</p>
                     <ul>
                         <li class="left wow fadeInLeft animate" data-wow-delay=".65s"><span class="fa fa-caret-left"></span></li>
                         <li class="right wow fadeInRight animate" data-wow-delay=".65s"><span class="fa fa-caret-right"></span></li>
@@ -124,57 +142,30 @@
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8">
                     <div class="contenido-slider">
-                        <ul class="conteudo regular slider">                        
+                        <ul class="conteudo regular slider">          
+
+                            <%
+                            oListaArquivos.AbreTabela("select id,foto from "&oListaArquivos.prefixoTabela&"salinas where ativo='s' AND regTerminado='s' order by id asc")                           
+                            while not oListaArquivos.rs.eof
+                            %>              
 
                             <li class="item">
-                                <span class="item-imagem">
-                                    <img src="images/galeria/1.jpg" alt="">
+                                <span class="item-imagem" style="min-height:440px">
+                                    <img src="<%=oListaArquivos.enderecoSalinas%><%=oListaArquivos.rs("foto")%>" alt="">
                                     <span class="item-content">
-                                        <h4>Evaporação</h4>
+                                        <h4></h4>
                                     </span>
                                 </span>                                                 
                             </li>
-                            <li class="item">
-                                <span class="item-imagem">
-                                    <img src="images/galeria/2.jpg" alt="">
-                                    <span class="item-content">
-                                        <h4>Cristalização</h4>
-                                    </span>
-                                </span>                                                 
-                            </li>
-                            <li class="item">
-                                <span class="item-imagem">
-                                    <img src="images/galeria/3.jpg" alt="">
-                                    <span class="item-content">
-                                        <h4>Colheita</h4>
-                                    </span>
-                                </span>                                                 
-                            </li>
-                            <li class="item">
-                                <span class="item-imagem">
-                                    <img src="images/galeria/4.jpg" alt="">
-                                    <span class="item-content">
-                                        <h4>Pilha de sal</h4>
-                                    </span>
-                                </span>                                                 
-                            </li>
-                            <li class="item">
-                                <span class="item-imagem">
-                                    <img src="images/galeria/1.jpg" alt="">
-                                    <span class="item-content">
-                                        <h4>Evaporação</h4>
-                                    </span>
-                                </span>                                                 
-                            </li>
-                            <li class="item">
-                                <span class="item-imagem">
-                                    <img src="images/galeria/2.jpg" alt="">
-                                    <span class="item-content">
-                                        <h4>Cristalização</h4>
-                                    </span>
-                                </span>                                                 
-                            </li>
-                            
+
+                            <%
+                            oListaArquivos.rs.MoveNext()                                
+                            wend
+                            oListaArquivos.rs.Close()
+                            set oListaArquivos.rs = nothing
+                            %>
+
+
 
                         </ul>
                     </div>

@@ -1,13 +1,19 @@
-<!-- #include file="admin/_classes/__cl__conexao.asp" -->
+<!-- #include file="administrador/_classes/__cl__conexao.asp" -->
+<%
+Dim oListaArquivos
+Set oListaArquivos = New Conexao
+oListaArquivos.AbreConexao()
+%>
+
 <!-- #include file="layout/cod-head.asp" -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Sal Lebre é o sal número 1 do Brasil. Presente em mesas dos quatro cantos do país, Lebre tem uma linha variada que atende todos os gostos.">
+    <meta name="keywords" content="sal de qualidade, produção de sal, produtora de sal, distribuidor de sal, distribuidora de sal, distribuição de sal, linha de sal, referência em sal, sal saudável, sal natural, salina, maior salina, salineira, maior produção de sal, produção de sal, manufatura de sal, marca de sal, sal certificado, sal reconhecido, sal no brasil, sal sustentável, norsal, cristais de sal, tipos de sal, sal número 1, sal de cozinha, melhor sal, sal mais puro">
     <meta name="author" content="EFWeb - eduardofagnoni@gmail.com">
-    <title></title>
+    <title>Conheça Sal Lebre – o sal mais variado e vendido do Brasil </title>
 <!-- #include file="layout/style-head.asp"-->
 <!-- CSS Custom page -->
 
-<link rel="stylesheet" type="text/css" href="stylesheet/styleSliderAlternado.css">
+<link rel="stylesheet" type="text/css" href="stylesheet/styleSliderAlternadoASalLebre.css">
 <link rel="stylesheet" type="text/css" href="stylesheet/styleASalLebre.css">
 <link rel="stylesheet" type="text/css" href="plugins/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css">
@@ -64,6 +70,32 @@
                     <p class="wow fadeInUp animate" data-wow-delay=".15s">Sal Lebre é uma marca de sal pertencente à Norsal, a maior especialista em sal de alto padrão do Brasil. Sediada na Salina Miramar, localizada em Areia Branca, RN, a Norsal tem um padrão de qualidade incomparável, com produtos que vão além do sal de cozinha. É a única refinadora de sal que está presente de norte a sul do país.</p>
                 </div>
             </div>
+
+            <div class="row">
+				<div class="itens-tabela">
+					<a href="http://www.norsal.com.br" target="_blank" class="coluna wow fadeInLeft animate" data-wow-delay=".25s">
+						<div class="cont cont-1" style="background:#16216a;">
+							<h3>Quatro décadas<br>de tradição<br>e expertise.</h3>
+							<p>Para a Norsal, produzir o melhor sal é uma verdadeira paixão e tradição, que você confere nos melhores mercados, desde 1973.</p>
+						</div>
+						<button class="bt-1">Visite o site da Norsal <span class="fa fa-angle-right"></button>
+					</a>
+					<a href="nosso-sal.asp" class="coluna wow fadeInUp animate" data-wow-delay=".25s">
+						<div class="cont cont-2" style="background:#0096cc;">
+							<h3>360 milHÕES DE QUILOS<br>de sal por ano.</h3>
+							<p>A Sal Lebre tem sua origem na salina Miramar, onde construiu uma estrutura capaz de atender consumidores de norte a sul do país.</p>
+						</div>
+						<button class="bt-2">Conheça a Salina Miramar <span class="fa fa-angle-right"></button>
+					</a>
+					<a href="nosso-sal.asp" class="coluna wow fadeInRight animate" data-wow-delay=".25s">
+						<div class="cont cont-3" style="background:#64d6ff;">
+							<h3>A excelência<br>na produção<br>de sal.</h3>
+							<p>Todos os anos são feitas pesquisas para aprimorar os processos de produção de sal, treinamentos, controle de qualidade e modernização de equipamentos.</p>
+						</div>
+						<button class="bt-3">Saiba mais sobre o nosso sal <span class="fa fa-angle-right"></button>
+					</a>
+				</div>
+			</div>
             
         </div>
     </section>
@@ -90,7 +122,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <h2 class="wow fadeInUp animate" data-wow-delay=".15s">Nosso comprometimento não é só com a qualidade.</h2>
-                    <p class="align-rigth wow fadeInUp animate"  data-wow-delay=".25s">Mais que um sal de qualidade, a Norsal trabalha em prol da sociedade e do meio ambiente. Conheça alguns dos projetos que realizamos:</p>
+                    <p class="align-rigth wow fadeInUp animate"  data-wow-delay=".25s" style="color:#00448a;">Mais que um sal de qualidade, a Norsal trabalha em prol da sociedade e do meio ambiente. Conheça alguns dos projetos que realizamos:</p>
                     <ul>
                         <li class="left wow fadeInLeft animate" data-wow-delay=".65s"><span class="fa fa-caret-left"></span></li>
                         <li class="right wow fadeInRight animate" data-wow-delay=".65s"><span class="fa fa-caret-right"></span></li>
@@ -98,17 +130,40 @@
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8">
                     <div class="contenido-slider">
-                        <ul class="conteudo regular slider">                        
+                        <ul class="conteudo regular slider">  
 
-                            <li class="item" onclick="location.href=''">
+                            <%
+                            oListaArquivos.AbreTabela("select id,nome,foto from "&oListaArquivos.prefixoTabela&"projeto where ativo='s' AND regTerminado='s' order by nome asc")
+
+                            varCssItem="item"
+                            while not oListaArquivos.rs.eof
+                            %>
+
+                            <li class="<%=varCssItem%>" onclick="location.href='sustentabilidade-interna.asp?id=<%=oListaArquivos.rs("id")%>'">
                                 <span class="item-imagem">
-                                    <img src="images/marcacao-a.jpg" alt="">
+                                    <img src="<%=oListaArquivos.enderecoProjetos%><%=oListaArquivos.rs("foto")%>" alt="<%=oListaArquivos.rs("nome")%>">
                                 </span>
                                 <span class="item-decor"></span>
                                 <span class="item-content">
-                                    <h4>Escola Norsal</h4>
+                                    <h4><%=oListaArquivos.rs("nome")%></h4>
                                 </span>                                                         
                             </li>
+
+                            <%
+                            oListaArquivos.rs.MoveNext()
+                                if varCssItem="item" then
+                                varCssItem="item-invert"
+                                else
+                                varCssItem="item"
+                                end if
+                            wend
+                            oListaArquivos.rs.Close()
+                            set oListaArquivos.rs = nothing
+                            %>
+
+
+
+
                             <li class="item-invert" onclick="location.href=''">
                                 <span class="item-imagem">
                                     <img src="images/marcacao-b.jpg" alt="">
@@ -118,6 +173,10 @@
                                     <h4>Biblioteca Norsal<br>mais um item</h4>
                                 </span>                                                         
                             </li>
+
+
+
+
                             <li class="item" onclick="location.href=''">
                                 <span class="item-imagem">
                                     <img src="images/marcacao-a.jpg" alt="">

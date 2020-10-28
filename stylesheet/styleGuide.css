@@ -26,6 +26,11 @@ body {
 main {
   position: relative;
 }
+.btn {
+  -webkit-border-radius: 0!important;
+  -moz-border-radius: 0!important;
+  border-radius: 0!important;
+}
 .animation {
   background: url(../images/testesprits.png);
   width: 364px;
@@ -130,16 +135,6 @@ main {
 /*-----------------------------------------------------
 Banners Home
 -----------------------------------------------------*/
-.banner-home {
-  width: 100%;
-  height: 100%;
-  background: url(../images/o-sal-numero-ummmm-do-brasil.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  position: relative;
-}
 .banner-home .bt-banner p {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -169,6 +164,17 @@ Banners Home
 }
 @media only screen and (min-width: 320px) {
   .banner-home {
+    width: 100%;
+    height: 100%;
+    background: url(../images/Pag_Home_banner01.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    min-height: 694px!important;
+  }
+  .banner-home {
     overflow: hidden;
   }
   .banner-home .bt-banner {
@@ -188,6 +194,17 @@ Banners Home
   }
 }
 @media only screen and (min-width: 600px) {
+  .banner-home {
+    width: 100%;
+    height: 100%;
+    background: url(../images/o-sal-numero-ummmm-do-brasil.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    min-height: 694px!important;
+  }
   .banner-home {
     overflow: unset;
   }
@@ -250,7 +267,24 @@ Banners Home
 }
 @media only screen and (min-width: 1200px) {
   .banner-home .bt-banner {
-    margin: 70% 0 0 0;
+    margin: 40% 0 0 0;
+    width: 355px;
+    height: 116px;
+    display: block;
+    float: right;
+    text-align: left;
+    position: relative;
+  }
+  .banner-home .bt-banner #animation_container {
+    position: absolute;
+    display: block;
+    top: -130px;
+    right: 140px;
+  }
+}
+@media only screen and (min-width: 1382px) {
+  .banner-home .bt-banner {
+    margin: 60% 0 0 0;
     width: 355px;
     height: 116px;
     display: block;
@@ -287,14 +321,27 @@ Banners Home
 /*-----------------------------------------------------
 Banners Home //
 -----------------------------------------------------*/
-#selo-sal-na-medida {
-  width: 122px;
-  height: 122px;
-  margin: -61px auto 0 -45px;
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-  left: 50%;
+@media only screen and (min-height: 320px) {
+  #selo-sal-na-medida {
+    width: 122px;
+    height: 122px;
+    margin: -61px auto 0 -45px;
+    position: absolute;
+    z-index: 2;
+    bottom: -60px;
+    left: 50%;
+  }
+}
+@media only screen and (min-height: 694px) {
+  #selo-sal-na-medida {
+    width: 122px;
+    height: 122px;
+    margin: -61px auto 0 -45px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+  }
 }
 section {
   padding: 60px 0;
@@ -318,7 +365,7 @@ Section Geral Textos Laterais
     text-align: left;
     font-family: 'Open Sans', sans-serif;
     font-size: 26px;
-    color: #00497a;
+    color: #16216a;
   }
   .textos-laterais p.align-rigth {
     text-align: left;
@@ -336,7 +383,7 @@ Section Geral Textos Laterais
     text-align: right;
     font-family: 'Open Sans', sans-serif;
     font-size: 40px;
-    color: #00497a;
+    color: #16216a;
   }
   .textos-laterais p.align-rigth {
     text-align: right;

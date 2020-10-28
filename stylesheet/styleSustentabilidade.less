@@ -82,15 +82,15 @@ Texto em tabelas
         list-style: none;
         margin:30px 0 0 0;
         padding:0;
-        display: table;
+        display: block
         width: 100%;
-        table-layout: fixed;
+        //table-layout: fixed;
     }
     .texto-tabela .coluna ul li {
-        margin:0;
+        margin:0 0 40px 0;
         padding:0;
-        display: table-cell;
-        vertical-align: bottom;
+        display: block;
+        //vertical-align: bottom;
     }
     .texto-tabela .coluna ul li span {
         width: 64px;
@@ -107,6 +107,7 @@ Texto em tabelas
     }
     .texto-tabela .coluna ul li span.seta {
         width: 34px;
+        display:none;
     }
     .texto-tabela .coluna ul li.larg {
         width: 250px;
@@ -145,6 +146,8 @@ Texto em tabelas
         padding:0 60px 0 0;
         margin:0;
     }
+
+    
 } //col-sm
 @media only screen and (min-width: 830px) {}
 @media only screen and (min-width: 992px) {
@@ -176,6 +179,41 @@ Texto em tabelas
         font-size: 15px;
         padding:0 60px 0 0;
         margin:0;
+    }
+
+    .texto-tabela .coluna ul {
+        list-style: none;
+        margin:30px 0 0 0;
+        padding:0;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+    .texto-tabela .coluna ul li {
+        margin:0;
+        padding:0;
+        display: table-cell;
+        vertical-align: bottom;
+    }
+    .texto-tabela .coluna ul li span {
+        width: 64px;
+        display: block;
+    }
+    .texto-tabela .coluna ul li p {
+        .texto-openSans;
+        font-size: 13px;
+        text-transform: uppercase;
+        color:#16216a;
+        font-weight: bold;
+        white-space: nowrap;
+        margin:10px 0 0 0;
+    }
+    .texto-tabela .coluna ul li span.seta {
+        width: 34px;
+        display:block;
+    }
+    .texto-tabela .coluna ul li.larg {
+        width: 250px;
     }
 }
 @media only screen and (min-width: 1382px) {}
@@ -379,7 +417,7 @@ Filtros e navegação
         margin:0;
         padding:0;  
         float: left;  
-        display:none; 
+        display:none;         
     }
     .filtros-e-navegacao form.frmFiltrosUso {
         float: right;
@@ -540,7 +578,8 @@ lista de projetos
     text-align: left
 }
 .lista-projetos .tabela .coluna button span {
-    float: right;
+    //float: right;
+    padding:0 0 0 20px;
     font-size: 15px;
 }
 .lista-projetos .tabela .coluna aside {

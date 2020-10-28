@@ -1,4 +1,4 @@
-<svg id="Camada_3" data-name="Camada 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50.699 51.539">
+<svg id="Camada_3" data-name="Camada 3" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50.699 51.539">
   <defs>
     <style>
       .cls-1-mapa {

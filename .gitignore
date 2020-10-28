@@ -1,4 +1,5 @@
-admin/classes/
-admin/__media/
-admin/classes/*
-admin/__media/*
+administrador/
+assets/
+bootstrap/
+plugins/
+teste-slider.excluir/

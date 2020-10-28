@@ -173,22 +173,43 @@ Vídeo Camanha
   background-color: rgba(0, 0, 0, 0.555);
   overflow: hidden;
 }
-.video-campanha .pelicula-transparencia .content-texto {
-  background: #0096cc;
-  padding: 49px;
-  position: absolute;
-  right: 0;
-  top: 30%;
-  display: block;
-  max-width: 360px;
+@media only screen and (min-width: 320px) {
+  .video-campanha .pelicula-transparencia .content-texto {
+    background: #0096cc;
+    padding: 49px 30px;
+    position: absolute;
+    right: 0;
+    top: 33%;
+    display: block;
+    max-width: 360px;
+  }
+  .video-campanha .pelicula-transparencia .content-texto p {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+  }
 }
-.video-campanha .pelicula-transparencia .content-texto p {
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-size: 23px;
-  font-weight: 300;
-  line-height: 30px;
+@media only screen and (min-width: 768px) {
+  .video-campanha .pelicula-transparencia .content-texto {
+    background: #0096cc;
+    padding: 49px;
+    position: absolute;
+    right: 0;
+    top: 33%;
+    display: block;
+    max-width: 360px;
+  }
+  .video-campanha .pelicula-transparencia .content-texto p {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 30px;
+  }
 }
 .video-campanha .play-video {
   width: 84px;
@@ -236,6 +257,113 @@ Vídeo Camanha
 Vídeo Camanha //
 -----------------------------------------------------*/
 /*-----------------------------------------------------
+Vídeo Manifesto
+-----------------------------------------------------*/
+.video-manifesto {
+  background: url(../images/bg-video-manifesto.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 598px;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+.video-manifesto .pelicula-transparencia {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.555);
+  overflow: hidden;
+}
+@media only screen and (min-width: 320px) {
+  .video-manifesto .pelicula-transparencia .content-texto {
+    background: #0096cc;
+    padding: 49px 30px;
+    position: absolute;
+    right: 0;
+    top: 33%;
+    display: block;
+    max-width: 360px;
+  }
+  .video-manifesto .pelicula-transparencia .content-texto p {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: normal;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .video-manifesto .pelicula-transparencia .content-texto {
+    background: #0096cc;
+    padding: 49px;
+    position: absolute;
+    right: 0;
+    top: 33%;
+    display: block;
+    max-width: 360px;
+  }
+  .video-manifesto .pelicula-transparencia .content-texto p {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 30px;
+  }
+}
+.video-manifesto .play-video {
+  width: 84px;
+  height: 84px;
+  background: #00448a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -42px 0 0 -42px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.video-manifesto .play-video span {
+  color: #ffffff;
+  font-size: 25px;
+  text-align: center;
+  display: block;
+  margin: 30px 0 0 5px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.video-manifesto .play-video:hover {
+  background: #0179a5;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.video-manifesto .play-video:hover span {
+  color: #00448a;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+/*-----------------------------------------------------
+Vídeo Manifesto //
+-----------------------------------------------------*/
+/*-----------------------------------------------------
 Vídeo Making off 
 -----------------------------------------------------*/
 .video-making-off {
@@ -249,33 +377,76 @@ Vídeo Making off
   content: "";
   clear: both;
 }
-.video-making-off .esquerda {
-  width: 50%;
-  height: 362px;
-  float: left;
-  background: url(../images/bg-video-making-off.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 .video-making-off .direita {
   width: 50%;
   height: 362px;
   float: right;
   background: #00448a;
 }
-.video-making-off .text-video-making-off {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -40px 0 0 -30px;
-  color: #ffffff;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 27px;
-  font-weight: bold;
-  text-transform: uppercase;
+@media only screen and (min-width: 320px) {
+  .topo-campanhas {
+    background: url(../images/Pag_Campanhas_banner01.png) no-repeat center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .video-making-off .esquerda {
+    width: 50%;
+    height: 362px;
+    float: left;
+    background: url(../images/Pag_Campanhas_imagem01.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .video-making-off .text-video-making-off span {
+    font-size: 27px;
+  }
+  .video-making-off .text-video-making-off {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -30px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .topo-campanhas {
+    background: url(../images/topo-campanha.jpg) no-repeat center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .video-making-off .esquerda {
+    width: 50%;
+    height: 362px;
+    float: left;
+    background: url(../images/bg-video-making-off.jpg) no-repeat center right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .video-making-off .text-video-making-off {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -30px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 27px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }
 .video-making-off .text-video-making-off .play-video-making-off {
   width: 57px;
@@ -397,4 +568,73 @@ Modal Vídeo Camanha
 }
 /*-----------------------------------------------------
 Modal Vídeo Camanha //
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+Modal Vídeo Manifesto 
+-----------------------------------------------------*/
+.video-manifesto .modal-dialog {
+  width: 100%!important;
+  height: 100%!important;
+  margin: 0!important;
+  padding: 0!important;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+.video-manifesto .modal-content {
+  min-height: 100%!important;
+  border-radius: 0!important;
+  margin: 0!important;
+  padding: 0!important;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+.video-manifesto .modal-body {
+  width: 100%!important;
+  height: 100%!important;
+  margin: 0!important;
+  padding: 0!important;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+.video-manifesto .close-video-manifesto {
+  position: absolute;
+  z-index: 100;
+  right: 50px;
+  top: 50px;
+  background-color: transparent;
+  border: none;
+}
+.video-manifesto .close-video-manifesto span {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 300;
+}
+.video-manifesto .iframe {
+  width: 100%!important;
+  height: 100%!important;
+  margin: 0!important;
+  padding: 0!important;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+.video-manifesto iframe {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-size: cover;
+}
+/*-----------------------------------------------------
+Modal Vídeo Manifesto //
 -----------------------------------------------------*/

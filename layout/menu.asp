@@ -1,4 +1,10 @@
     </head>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5VTHSD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <body>
 <header id="header-principal">
     <div class="linha-branca"></div>
@@ -33,6 +39,7 @@
             <div class="col-xs-12">
                 <nav>
                     <ul class="menu-principal">
+                        <li class="" data-wow-delay=".01s"><a href="default.asp">Home</a></li>
                         <li class="" data-wow-delay=".03s"><a href="a-sal-lebre.asp">A Sal Lebre</a></li>
                         <li class="" data-wow-delay=".06s"><a href="nosso-sal.asp">Nosso Sal</a></li>
                         <li class="" data-wow-delay=".09s"><a href="produtos.asp">Produtos</a></li>
