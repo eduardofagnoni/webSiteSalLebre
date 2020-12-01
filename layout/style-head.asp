@@ -11,6 +11,6 @@
         <link rel="stylesheet" type="text/css" href="plugins/font-awesome/css/font-awesome.min.css">        
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="stylesheet/styleMenu.css">
-        <link rel="stylesheet" type="text/css" href="stylesheet/styleGuide.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet/styleGuide-v2.css">
 
         <link rel="stylesheet" href="css/popexit.css" />

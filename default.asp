@@ -21,6 +21,7 @@ oListaReceitas.AbreConexao()
 <link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css">
 <!-- #include file="layout/menu.asp"-->
 
+<!--
 <section class="banner-home">
 	<div class="container">
 		<div class="row">			
@@ -40,24 +41,26 @@ oListaReceitas.AbreConexao()
 		</div>
 	</div>
 </section>
+-->
 
 
-<!--
-<section class="banner-home" style="background: url(images/banner-topo.jpg) no-repeat center center fixed; -webkit-background-size: cover;
-  	-moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<section class="banner-home-v2">
 	<div class="container">
 		<div class="row">			
-			<div class="col-sm-7">
-				<div class="bt-banner">
+			<div class="col-sm-12 text-center altura-banner">
+				<div class="bt-banner" style="margin:0 0 0 0;">
 
-					
+					<div class="cont-banner"><img src="images/banner_home_v2.png" alt="O sal número um tem receitas nota 10!" /></div>
 
+					<p>Temos dicas e receitas de dar <br>água na boca. Vem provar!</p>
+					<button class="button-v2" onclick="location.href='receitas.asp'">Confira</button>
 				</div>
 			</div>						
 		</div>
 	</div>
 </section>
--->
+
+
 
 
 <div id="selo-sal-na-medida" class="wow fadeInUp" data-wow-delay=".06s"><img src="images/sal-na-medida-sabor-com-saude.png" alt="Sal na medida sabor com saúde"></div>
@@ -206,11 +209,6 @@ oListaReceitas.AbreConexao()
 <div class="coelho-sprit-3-branco"></div>
 
 <section class="cobertura-konami">
-    <!--
-    <div class="bg-video">
-        <video width="100%" height="110%" autoplay loop src="assets/videobg/video.mp4"></video>
-    </div>
-    -->
     <div class="coelho-sprit-4"></div>
 </section>
 
@@ -327,7 +325,7 @@ $('.receita-right').click(function(){
 <script src="assets/animabanner/animateBanner.js"></script>
 
 
-
+<!--
 
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
@@ -371,3 +369,8 @@ function handleComplete(evt,comp) {
 }
 init();
 </script>
+
+-->
+
+
+

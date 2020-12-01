@@ -1,4 +1,5 @@
 	
+	<!--
 	<div id="news-signup">
 		<div class="wrapper">
 			<div id="news-signup_close"></div>
@@ -15,6 +16,29 @@
 			</div>
 		</div>
 	</div>
+	-->
+
+	<div id="bio_ep">
+		<div class="wrapper">
+			<!--<div id="news-signup_close"></div>-->
+			<div class="newsletter-content" id="phplistsubscriberesult">
+				<form id="idFrmExitPopup" action="__add_lead_popexit.asp" method="post">
+					
+					<input class="popexit" type="text" name="txtNome" id="txtNome" placeholder="Nome*" required />
+					<input class="popexit" type="email" name="txtEmail" id="txtEmail" placeholder="E-mail*" required />
+					<input type="hidden" id="txtFrm-origem" name="txtFrm-origem" value="Pop-up Exit" />
+					<button type="submit">Enviar</button>
+					<div class="popObrigado"><img src="images/popexit/popObrigado.png" alt="" /></div>   
+				</form>
+								
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 	
 	<footer>
 		<div class="container">

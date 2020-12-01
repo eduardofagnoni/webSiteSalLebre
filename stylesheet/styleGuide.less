@@ -165,7 +165,6 @@ main {
 Banners Home
 -----------------------------------------------------*/
 
-
 .banner-home .bt-banner p {
 	.texto-openSans;
 	font-size: 16px;
@@ -190,11 +189,115 @@ Banners Home
 
 
 
+
+
+
+
+
+/* banner versão 2 */
+.banner-home-v2 {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	width: 100%;
+		height: 100%;
+		background: url(../images/banner-home-v2.png) no-repeat center center fixed; 
+		  -webkit-background-size: cover;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  background-size: cover;
+		position: relative;
+		min-height: 694px!important;
+}
+.banner-home-v2 img {
+	max-width: 100%;
+}
+.banner-home-v2 .bt-banner p {
+	.texto-openSans;
+	font-size: 22px;
+	color:#ffffff;
+}
+.banner-home-v2 .bt-banner .button-v2 {
+	background: #eede17;
+	border: solid 1px #eede17;
+	padding: 18px 70px;
+	.texto-openSans;
+	font-size: 14px;
+	font-weight: bold;
+	color:#16216a;
+	border-radius: 30px;
+	text-transform: uppercase;
+	.tempoDeTransicao(0.2s);
+}
+.banner-home-v2 .bt-banner .button-v2:hover {
+	background: #eede17;
+	color:#343434;
+	.tempoDeTransicao(0.2s);
+}
+@media only screen and (min-width: 320px) {
+	.banner-home-v2 .altura-banner {
+		margin-top: 30%;
+	}
+}
+@media only screen and (min-width: 600px) {
+	.banner-home-v2 .altura-banner {
+		margin-top: 7%;
+	}
+}
+@media only screen and (min-width: 1382px) {
+	.banner-home-v2 .altura-banner {
+		margin-top: 15%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 320px) {
 	.banner-home {
 		width: 100%;
 		height: 100%;
-		background: url(../images/Pag_Home_banner01.jpg) no-repeat center center fixed; 
+		background: url(../images/banner-home-v2.png) no-repeat center center fixed; 
 		  -webkit-background-size: cover;
 		  -moz-background-size: cover;
 		  -o-background-size: cover;
@@ -202,7 +305,6 @@ Banners Home
 		position: relative;
 		min-height: 694px!important;
 	}
-
 	.banner-home {
 		overflow: hidden;
 	}
@@ -220,13 +322,19 @@ Banners Home
 		width:495px; height:149px;
 		display: block;
 	}
+	.banner-home .bt-banner .cont-banner {
+		margin:-200px 0 40px 0;
+		width:739px; height:260px;
+		display: block;
+		background: red;
+	}
 }
 @media only screen and (min-width: 480px) {}
 @media only screen and (min-width: 600px) {
 	.banner-home {
 		width: 100%;
 		height: 100%;
-		background: url(../images/o-sal-numero-ummmm-do-brasil.png) no-repeat center center fixed; 
+		background: url(../images/banner-home-v2.png) no-repeat center center fixed; 
 		  -webkit-background-size: cover;
 		  -moz-background-size: cover;
 		  -o-background-size: cover;
@@ -234,7 +342,6 @@ Banners Home
 		position: relative;
 		min-height: 694px!important;
 	}
-
 	.banner-home {
 		overflow: unset;
 	}
@@ -251,7 +358,7 @@ Banners Home
 		margin:0 0 60px 0;
 		width:495px; height:149px;
 		display: block;
-	}
+	}	
 }
 @media only screen and (min-width: 768px) {
 	.banner-home .bt-banner {
@@ -326,6 +433,9 @@ Banners Home
 		display: block;
 		top:-130px;
 		right:140px;
+	}
+	.banner-home .bt-banner .cont-banner {
+		margin:-100px 0 40px 0;
 	}
 }
 

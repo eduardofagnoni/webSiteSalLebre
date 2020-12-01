@@ -6,9 +6,6 @@
         <script src="js/wow.min.js"></script>
         <script src="administrador/vendors/js/mascaras.js"></script>
 
-
-        <!--<script src="js/popexit.min.js" async defer></script>-->
-
         <script>
         
             /*******************************************************************

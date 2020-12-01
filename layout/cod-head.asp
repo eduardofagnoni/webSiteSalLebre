@@ -14,3 +14,21 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="application-name" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+
+    
+    <link rel="stylesheet" href="assets/css/popexit.css" />
+
+    <script src="assets/js/popexit.js"></script>
+    <script type="text/javascript">
+        bioEp.init({
+            width: 691,
+	        height: 400,
+            cookieExp: 30
+        });
+    </script>    
+    <style type="text/css">
+        #bio_ep_bg {} /* background*/
+        #bio_ep {} /* popup*/
+        #bio_ep_close {} /* close button*/
+	</style>
